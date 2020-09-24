@@ -2,7 +2,7 @@
 layout: post
 title:  "On data classes in Python 3.8 and 3.9"
 date:   2020-09-24
-categories: python dataclasses type safety scala
+categories: python data classes type safety scala
 published: true
 ---
 
@@ -104,7 +104,7 @@ one has to go a long way out of their path in order to cheat.
 
 ## Storing logic in data classes
 
-Since dataclasses provide automatic `__init__()` methods, they also provide an interesting
+Since data classes provide automatic `__init__()` methods, they also provide an interesting
 `__post_init__()` method that runs automatically after instantiation.
 
 For me, this method can be used to validate inputs and generate any extra data that can be deduced
@@ -113,7 +113,7 @@ from the provided parameters.
 In a [recent project](https://github.com/ber2/hourly-register/blob/dev/parser/config.py), I decided
 to use these methods at several places. As an example, at some point I needed to encode which days
 in a month have been taken off by a person as holidays. These can be:
-- Weekends: given as a list of which days in the week are taken off regulary; typically Saturdays
+- Weekends: given as a list of which days in the week are taken off regularly; typically Saturdays
   and Sundays.
 - Holidays: either bank holidays or vacations.
 
@@ -138,7 +138,7 @@ class DatesOff:
             )
 ```
 
-__One important caveat:__ if you freeze a dataclass, you will not be able to define new parameters
+__One important caveat:__ if you freeze a data class, you will not be able to define new parameters
 in `__post_init__()`.
 
 __Note:__ Python 3.9, coming out [very
