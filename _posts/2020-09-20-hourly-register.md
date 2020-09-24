@@ -6,7 +6,7 @@ categories: python automation scripts jinja latex
 published: true
 ---
 
-## Everybody fill up forms ##
+## Everybody fill up forms!
 
 The __hourly register form__ is a document which will be familiar to paid company workers in Spain.
 
@@ -138,77 +138,42 @@ from scratch in a project for a while.
 
 I use it only at the script's entrypoint, [`report.py`](https://github.com/ber2/hourly-register/blob/dev/report.py).
 
-### Dataclasses
+### Data classes
 
-It seems that a significant amount of work has been done in recent python versions in order to
-provide type-checking, such as hinting. Personally, I have grown more and more concerned about type
-safety, especially after learning Scala. Providing type hints and using `mypy` along `pytest` has
-become a staple in my TDD, clean-coding workflow.
+I decided that data classes were the right way to encode the data which can generate the report.
+See [here]({% post_url 2020-09-24-dataclasses %}) for a recent post about using dataclasses, written
+precisely after having coded this project.
 
-Python [dataclasses](https://docs.python.org/3.8/library/dataclasses.html) could perhaps be
-described as a best effort to obtain something that looks like a Scala [case
-class](https://docs.scala-lang.org/tour/case-classes.html). However, parallelism breaks beyond
-declaration and instantiation (both allow passing in typed parameters and have automated
-instantiation), and behaviours are rather different, mostly due to the nature of both programming
-languages:
-- At the end of the day, Python is dynamically typed and checking the types of attributes in
-  dataclasses at runtime is just as bad an idea as checking types of variables elsewhere. Mypy can
-  help here, but don't expect a dataclass to raise an exception during runtime because it received a
-  string instead of an integer.
-- Dataclasses can be _frozen_, meaning that attribute updates after init will raise a `TypeError`
-  exception.  This is a next-best to having an immutable value, but remember that everything in
-  python is mutable at the end of the day.
-
-Since dataclasses provide automatic `__init__()` methods, they also provide an interesting
-`__post_init__()` method, that runs automatically afterwards.
-
-For the purposes of the hourly-reports project, I have taken the following approach:
+In more detail, the approach that I have taken is the following:
 1. Instantiate a dataclass with all the config coming from the YAML file.
-2. Use the `__post_init__` method to validate inputs (excluding input types) and to generate all
+2. Use the `__post_init__()` method to validate inputs (excluding input types) and to generate all
    extra data that will be used in the template rendering but can be automatically deduced from the
    original data.
 
-One important caveat: if you freeze the dataclass, you will not be able to define new parameters
-after init. For this reason, we have had to resort to mutable dataclasses.
-
-As an example, this is what the dataclass for a worker config looks like:
-
-```python
-from dataclasses import dataclass, field
-import re
-from typing import List
-
-
-class InvalidDocument(ValueError):
-    pass
-
-
-def is_valid_dni(document: str) -> bool:
-    doc_upper = document.upper()
-    pattern = re.compile(r"[0-9]{7,8}[A-Z]{1}")
-    return bool(re.fullmatch(pattern, doc_upper))
-
-
-@dataclass
-class Worker:
-    name: str
-    dni: str
-    ss_n: List[str]
-    ss_n_repr: str = field(init=False, repr=False)
-    initials: str = field(init=False, repr=False)
-
-    def __post_init__(self):
-        if not is_valid_dni(self.dni):
-            raise InvalidDocument("Document number %s is not a valid DNI" % self.dni)
-        if not is_valid_ss_n(self.ss_n):
-            raise InvalidDocument(
-                "Document number %s is not a valid social security number" % self.ss_n
-            )
-        self.ss_n_repr = " / ".join(self.ss_n)
-        self.initials = "".join([w[0].upper() for w in self.name.split(" ")])
-```
+Since I wanted to use the `__post_init__()` method to define new parameters, I resorted to mutable
+dataclasses.
 
 ## Jinja templating
+
+In order to go from a YAML config to a report in LaTeX, it is necessary to generate a TeX file which can be
+then parsed by `pdflatex` or a similar program.
+
+I have a certain degree of familiarity with [Jinja](https://jinja.palletsprojects.com/en/2.11.x/),
+as I have used it for work on several occasions. This was an opportunity to use it in a project from
+scratch.
+
+Jinja seems to have a lot of usage at templating HTML code, but can be used as a means to template
+pretty much anything text-based. At work, we use it in order to template SQL scripts and generate
+table names automatically.
+
+I looked up whether there were cases of Jinja templating applied to LaTeX documents and I found a
+couple of posts (in particular, one by [Brad
+Erickson](http://eosrei.net/articles/2015/11/latex-templates-python-and-jinja2-generate-pdfs)) which
+recommended using an _ad hoc_ Jinja environment because the default identification strings can
+conflict with the LaTeX commands.
+
+How
+
 
 
 
