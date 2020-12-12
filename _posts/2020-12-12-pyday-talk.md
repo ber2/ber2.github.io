@@ -28,7 +28,7 @@ checking that nobody voted twice.
 
 ### Materials
 
-- The [video](missing-link) recording, published at PyBCN's youtube channel.
+- The [video](https://www.youtube.com/watch?v=KOpW86J56CU) recording, published at PyBCN's youtube channel.
 
 - The [slides](https://www.beautiful.ai/player/-MO5OSZEML6fSM-KYecq), done using __beautiful.ai__.
 
