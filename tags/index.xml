@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Data Ramblings</title>
+    <link>https://ber2.github.io/tags/</link>
+    <description>Recent content in Tags on Data Ramblings</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 12 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://ber2.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>dask</title>
+      <link>https://ber2.github.io/tags/dask/</link>
+      <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ber2.github.io/tags/dask/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>parallel</title>
+      <link>https://ber2.github.io/tags/parallel/</link>
+      <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ber2.github.io/tags/parallel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://ber2.github.io/tags/python/</link>
+      <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ber2.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>asyncio</title>
+      <link>https://ber2.github.io/tags/asyncio/</link>
+      <pubDate>Sun, 01 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ber2.github.io/tags/asyncio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tdd testing</title>
+      <link>https://ber2.github.io/tags/tdd-testing/</link>
+      <pubDate>Sun, 01 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ber2.github.io/tags/tdd-testing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>automation</title>
+      <link>https://ber2.github.io/tags/automation/</link>
+      <pubDate>Sat, 26 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ber2.github.io/tags/automation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jinja</title>
+      <link>https://ber2.github.io/tags/jinja/</link>
+      <pubDate>Sat, 26 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ber2.github.io/tags/jinja/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>latex</title>
+      <link>https://ber2.github.io/tags/latex/</link>
+      <pubDate>Sat, 26 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ber2.github.io/tags/latex/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>scripts</title>
+      <link>https://ber2.github.io/tags/scripts/</link>
+      <pubDate>Sat, 26 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ber2.github.io/tags/scripts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data classes</title>
+      <link>https://ber2.github.io/tags/data-classes/</link>
+      <pubDate>Thu, 24 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ber2.github.io/tags/data-classes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>scala</title>
+      <link>https://ber2.github.io/tags/scala/</link>
+      <pubDate>Thu, 24 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ber2.github.io/tags/scala/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>type safety</title>
+      <link>https://ber2.github.io/tags/type-safety/</link>
+      <pubDate>Thu, 24 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ber2.github.io/tags/type-safety/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>On data classes in Python 3.8 and 3.9 // Data Ramblings</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.80.0-DEV" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Alberto Cámara" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://ber2.github.io/css/main.min.68e582a4d4ed824d6b7e3b5b37cae47eb3779bd631046379d0e68b38230cc3e2.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="On data classes in Python 3.8 and 3.9"/>
+<meta name="twitter:description" content="In this post I gather a few comments and give some examples on the usage of data classes in Python.
+Data classes Data classes were introduced in Python 3.7. We could summarize them as a convenient way to represent data, since classes decorated with @dataclass will supply methods such as __init__() or __repr__() without having to define them.
+Parameter types are indicated using type annotations, so a data class declaration will look like this:"/>
+
+    <meta property="og:title" content="On data classes in Python 3.8 and 3.9" />
+<meta property="og:description" content="In this post I gather a few comments and give some examples on the usage of data classes in Python.
+Data classes Data classes were introduced in Python 3.7. We could summarize them as a convenient way to represent data, since classes decorated with @dataclass will supply methods such as __init__() or __repr__() without having to define them.
+Parameter types are indicated using type annotations, so a data class declaration will look like this:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ber2.github.io/posts/dataclasses/" />
+<meta property="article:published_time" content="2020-09-24T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-09-24T00:00:00+00:00" />
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://ber2.github.io/"><img class="app-header-avatar" src="/images/pingu.jpg" alt="Alberto Cámara" /></a>
+      <h1>Data Ramblings</h1>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/">Home</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/about">About</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/tags">Tags</a>
+      </nav>
+      <p>Alberto Cámara</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/ber2" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+          <a target="_blank" href="https://twitter.com/b3r2s" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-twitter">
+  <title>twitter</title>
+  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+</svg></a>
+        
+          <a target="_blank" href="https://www.linkedin.com/in/alberto-camara/" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-linkedin">
+  <title>linkedin</title>
+  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">On data classes in Python 3.8 and 3.9</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Sep 24, 2020
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          5 min read
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+</svg>
+              <a class="tag" href="https://ber2.github.io/tags/python/">python</a>
+              <a class="tag" href="https://ber2.github.io/tags/scala/">scala</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <p>In this post I gather a few comments and give some examples on the usage of <strong>data classes in Python</strong>.</p>
+<h2 id="data-classes">Data classes</h2>
+<p><a href="https://docs.python.org/3/library/dataclasses.html">Data classes</a> were introduced in Python 3.7.
+We could summarize them as a convenient way to represent data, since classes decorated with
+<code>@dataclass</code> will supply methods such as <code>__init__()</code> or <code>__repr__()</code> without having to define them.</p>
+<p>Parameter types are indicated using type annotations, so a data class declaration will look like
+this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> dataclasses <span style="color:#f92672">import</span> dataclass
+
+<span style="color:#a6e22e">@dataclass</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span>:
+    name: str
+    age: str
+</code></pre></div><h2 id="type-safety-in-python">Type safety in Python</h2>
+<p>A significant amount of work has been done in recent Python versions in order to provide tools for
+type safety, and <a href="https://www.python.org/dev/peps/pep-0585/">more</a> is to come in future versions.</p>
+<p>Personally, I have grown more and more concerned about this issue, especially after learning Scala.
+Providing type hints and using <code>mypy</code> along <code>pytest</code> has become a staple in my TDD, clean-coding
+workflow.</p>
+<p>Python data classes could perhaps be described as a best effort to obtain something that looks like
+a Scala <a href="https://docs.scala-lang.org/tour/case-classes.html">case class</a>. The analogy works because
+both allow passing in typed parameters and have automated instantiation. However, the analogy stops
+here, and this is mostly due to the nature of both programming languages.</p>
+<p>With the definition above, the instantiation below is correct.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">In [<span style="color:#ae81ff">1</span>]: Person(<span style="color:#e6db74">&#34;Bertu&#34;</span>, <span style="color:#ae81ff">18</span>)
+Out[<span style="color:#ae81ff">1</span>]: Person(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Bertu&#39;</span>, age<span style="color:#f92672">=</span><span style="color:#ae81ff">18</span>)
+</code></pre></div><p>And the following also works <strong>without raising an exception</strong>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">In [<span style="color:#ae81ff">2</span>]: Person(<span style="color:#e6db74">&#34;Bertu&#34;</span>, <span style="color:#e6db74">&#34;18&#34;</span>)
+Out[<span style="color:#ae81ff">2</span>]: Person(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Bertu&#39;</span>, age<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;18&#39;</span>)
+</code></pre></div><p>We would have to rely on <code>mypy</code> to point out that <code>age</code> is expected to be an integer.</p>
+<p>At the end of the day, Python is dynamically typed and checking the types of attributes in
+data classes at runtime is just as bad an idea as checking types of variables elsewhere.</p>
+<p>The improvements in type hinting are so that an external tool, such as <code>mypy</code>, can be of help here,
+by doing some of the checks that a compiler does in other languages.</p>
+<p><strong>In conclusion:</strong> do not expect a data class to raise an exception during runtime because it
+received a string instead of an integer.</p>
+<h2 id="python-objects-are-mutable">Python objects are mutable</h2>
+<p>In Scala, and other functional languages, we speak of <em>values</em> instead of <em>variables</em>, and by this we
+mean that values are <strong>immutable</strong>. This is a must-have when manipulating large amounts of data and
+computing in parallel.</p>
+<p>Python data classes can be made to <em>look immutable</em>. More precisely, they may be <strong>frozen</strong>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> dataclasses <span style="color:#f92672">import</span> dataclass
+
+<span style="color:#a6e22e">@dataclass</span>(frozen<span style="color:#f92672">=</span>True)
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span>:
+    name: str
+    age: str
+</code></pre></div><p>Now, attribute updates after instantiation will raise a <code>FrozenInstanceError</code> exception. This is a next-best
+to having an immutable value, but always remember that <strong>everything in Python is mutable</strong>.</p>
+<p>How would we go about updating a frozen data class after instantiation? The init parameters are
+governed by an underlying dictionary, so it is enough to access that dictionary and update it.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">In [<span style="color:#ae81ff">3</span>]: b <span style="color:#f92672">=</span> Person(<span style="color:#e6db74">&#34;Bertu&#34;</span>, <span style="color:#ae81ff">18</span>)
+
+In [<span style="color:#ae81ff">4</span>]: b<span style="color:#f92672">.</span>age <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>
+<span style="color:#f92672">-----------------------------------------------</span>
+FrozenInstanceErrorTraceback (most recent call last)
+<span style="color:#f92672">&lt;</span>ipython<span style="color:#f92672">-</span>input<span style="color:#f92672">-</span><span style="color:#ae81ff">4</span><span style="color:#f92672">-</span><span style="color:#ae81ff">590</span>a00e1d903<span style="color:#f92672">&gt;</span> <span style="color:#f92672">in</span> <span style="color:#f92672">&lt;</span>module<span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">----&gt;</span> <span style="color:#ae81ff">1</span> b<span style="color:#f92672">.</span>age <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>
+
+<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span> <span style="color:#f92672">in</span> __setattr__(self, name, value)
+
+FrozenInstanceError: cannot assign to field <span style="color:#e6db74">&#39;age&#39;</span>
+
+In [<span style="color:#ae81ff">5</span>]: b<span style="color:#f92672">.</span>__dict__[<span style="color:#e6db74">&#34;age&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>
+
+In [<span style="color:#ae81ff">6</span>]: b
+Out[<span style="color:#ae81ff">6</span>]: Person(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Bertu&#39;</span>, age<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>)
+</code></pre></div><p>Admittedly, in practice it is a good idea to think of frozen data classes as immutable, given that
+one has to go a long way out of their path in order to cheat.</p>
+<h2 id="storing-logic-in-data-classes">Storing logic in data classes</h2>
+<p>Since data classes provide automatic <code>__init__()</code> methods, they also provide an interesting
+<code>__post_init__()</code> method that runs automatically after instantiation.</p>
+<p>For me, this method can be used to validate inputs and generate any extra data that can be deduced
+from the provided parameters.</p>
+<p>In a <a href="https://github.com/ber2/hourly-register/blob/dev/parser/config.py">recent project</a>, I decided
+to use these methods at several places. As an example, at some point I needed to encode which days
+in a month have been taken off by a person as holidays. These can be:</p>
+<ul>
+<li>Weekends: given as a list of which days in the week are taken off regularly; typically Saturdays
+and Sundays.</li>
+<li>Holidays: either bank holidays or vacations.</li>
+</ul>
+<p>I defined a data class describing this structure and performing a post-init validation as follows:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> dataclasses <span style="color:#f92672">import</span> dataclass, field
+<span style="color:#f92672">from</span> typing <span style="color:#f92672">import</span> List
+
+<span style="color:#a6e22e">@dataclass</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DatesOff</span>:
+    weekdays: List[int] <span style="color:#f92672">=</span> field(default_factory<span style="color:#f92672">=</span>list)
+    holidays: List[int] <span style="color:#f92672">=</span> field(default_factory<span style="color:#f92672">=</span>list)
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__post_init__</span>(self):
+        <span style="color:#66d9ef">if</span> any([wd <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">8</span>) <span style="color:#66d9ef">for</span> wd <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>weekdays]):
+            <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ValueError</span>(
+                <span style="color:#e6db74">&#34;Weekdays off not between 1 and 7: </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> str(self<span style="color:#f92672">.</span>weekdays)
+            )
+        <span style="color:#66d9ef">if</span> any([d <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">32</span>) <span style="color:#66d9ef">for</span> d <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>holidays]):
+            <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ValueError</span>(
+                <span style="color:#e6db74">&#34;Holidays given are not between 1 and 31: </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> str(self<span style="color:#f92672">.</span>holidays)
+            )
+</code></pre></div><p><strong>One important caveat:</strong> if you freeze a data class, you will not be able to define new parameters
+in <code>__post_init__()</code>.</p>
+<p><strong>Note:</strong> Python 3.9, coming out <a href="https://docs.python.org/3.9/whatsnew/3.9.html">very
+soon</a>, implements <a href="https://www.python.org/dev/peps/pep-0585/">PEP 585</a>, which includes of <a href="https://docs.python.org/3.9/whatsnew/3.9.html#pep-585-builtin-generic-types">built-in generic
+types</a>. In particular,
+it will be possible to stop importing <code>typing.List</code> and leave <code>list</code> as a type hint:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">weekdays: list[int]
+</code></pre></div><p>The same applies to <code>dict</code> and a few other frequently used types.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>I would say that data classes are a very handy tool when it comes to representing and manipulating
+data and, in many cases, they will be the <em>right</em> tool to get the job done.</p>
+<p>Their limitations are defined by the limitations of Python as a programming language, in particular
+dynamic typing and mutability.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://docs.python.org/3/library/dataclasses.html">Python docs</a> about the <code>dataclasses</code> module.</li>
+<li><a href="https://www.python.org/dev/peps/pep-0585/">PEP 585</a>.</li>
+<li><a href="http://mypy-lang.org/">Mypy</a>.</li>
+<li>Real Python&rsquo;s <a href="https://realpython.com/python-data-classes/">Ultimate Guide</a> to Data Classes in
+Python 3.7.</li>
+</ul>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

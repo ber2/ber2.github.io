@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Testing asyncio code on Python 3.9 // Data Ramblings</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.80.0-DEV" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Alberto Cámara" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://ber2.github.io/css/main.min.68e582a4d4ed824d6b7e3b5b37cae47eb3779bd631046379d0e68b38230cc3e2.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Testing asyncio code on Python 3.9"/>
+<meta name="twitter:description" content="A few notes on how to unit test Python asyncio code. Accompanying code available here.
+Python&rsquo;s asyncio library Starting from Python 3.7, and having received a lot of attention in subsequent releases, the asyncio library provides a basis for comfortably writing concurrent code.
+This is a good idea when you are given a task which is not CPU intensive, such that your program will spend most of the time idly waiting for responses from other components."/>
+
+    <meta property="og:title" content="Testing asyncio code on Python 3.9" />
+<meta property="og:description" content="A few notes on how to unit test Python asyncio code. Accompanying code available here.
+Python&rsquo;s asyncio library Starting from Python 3.7, and having received a lot of attention in subsequent releases, the asyncio library provides a basis for comfortably writing concurrent code.
+This is a good idea when you are given a task which is not CPU intensive, such that your program will spend most of the time idly waiting for responses from other components." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ber2.github.io/posts/asyncio-testing/" />
+<meta property="article:published_time" content="2020-11-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-11-01T00:00:00+00:00" />
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://ber2.github.io/"><img class="app-header-avatar" src="/images/pingu.jpg" alt="Alberto Cámara" /></a>
+      <h1>Data Ramblings</h1>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/">Home</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/about">About</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/tags">Tags</a>
+      </nav>
+      <p>Alberto Cámara</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/ber2" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+          <a target="_blank" href="https://twitter.com/b3r2s" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-twitter">
+  <title>twitter</title>
+  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+</svg></a>
+        
+          <a target="_blank" href="https://www.linkedin.com/in/alberto-camara/" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-linkedin">
+  <title>linkedin</title>
+  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Testing asyncio code on Python 3.9</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Nov 1, 2020
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          6 min read
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+</svg>
+              <a class="tag" href="https://ber2.github.io/tags/python/">python</a>
+              <a class="tag" href="https://ber2.github.io/tags/asyncio/">asyncio</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <p>A few notes on how to unit test Python asyncio code.
+Accompanying code available <a href="https://github.com/ber2/basic-asyncio-example">here</a>.</p>
+<h2 id="pythons-asyncio-library">Python&rsquo;s asyncio library</h2>
+<p>Starting from Python 3.7, and having received a lot of attention in subsequent releases, the
+<a href="https://docs.python.org/3/library/asyncio.html">asyncio</a> library provides a basis for comfortably
+writing concurrent code.</p>
+<p>This is a good idea when you are given a task which is not CPU intensive, such that your program
+will spend most of the time idly waiting for responses from other components. I/O bound tasks are
+the typical example: when extracting data from a REST API, you are bound to spend most time sitting
+on an idle CPU while waiting for HTTP responses.</p>
+<p>Instead of parallelizing your execution into multiple processes, asynchronous code works with
+coroutines. These are functions that do not return a value, but the promise of a value, once a call
+has been awaited for. Recent versions of Python have added lots of work to the asyncio library, and
+now there is a lot of syntactic sugar that makes life much sweeter.</p>
+<p>The syntactic sugar is built around two keywords:</p>
+<ul>
+<li><code>async</code>. A definition of a method with <code>async def</code> does not return a value, but an awaitable.
+There is also an <code>async with</code> context manager, which we will not discuss.</li>
+<li><code>await</code>. This keyword can only be used inside of an async definition. It just tells an
+asynchronous call to wait for the promised value to be computed, so that it can be manipulated in
+code.</li>
+</ul>
+<p>It is important to notice that once you enter into an async call, you enter a realm where every subsequent call is a
+coroutine and will eventually have to be awaited for.</p>
+<p>The <code>asyncio</code> library contains high level methods to call asynchronous code from within synchronous
+code. Therefore, a typical asyncio program will contain a synchronous entrypoint, a call to a method
+in asyncio asking to run a coroutine, waiting for results and then exiting.</p>
+<p>A very simple asyncio program highlighting this, borrowed from the official documentation, is the following:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> asyncio
+
+async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Hello...&#34;</span>)
+    await asyncio<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;... World!&#34;</span>)
+
+asyncio<span style="color:#f92672">.</span>run(main())
+</code></pre></div><p><strong>A note on third party libraries</strong>: if you want to use them in an async context, they should be
+designed within the asyncio paradigm. A very good example of that (and an oversimplification on my
+side): <a href="https://docs.aiohttp.org/en/stable/"><code>aiohttp</code></a> is a library that works as an asyncio
+analogous to the popular <a href="https://requests.readthedocs.io/en/master/"><code>requests</code></a> library.</p>
+<h2 id="a-small-example">A small example</h2>
+<p>Imagine that we want to perform calls to a server in order to retrieve data. This could be a
+database or a REST API. We will simulate these calls by providing an async method that will sleep
+for a random number of seconds (between 10 and 60).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> asyncio
+<span style="color:#f92672">import</span> random
+
+
+async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">individual_task</span>(task_number: int) <span style="color:#f92672">-&gt;</span> None:
+    seconds <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>randrange(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">60</span>)
+    <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;{task_number}</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">{seconds}&#34;</span>)
+    await asyncio<span style="color:#f92672">.</span>sleep(seconds)
+    <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;Task {task_number} done&#34;</span>)
+
+
+async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>(n_tasks: int) <span style="color:#f92672">-&gt;</span> None:
+
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Task #</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">Time&#34;</span>)
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;-------------&#34;</span>)
+
+    tasks <span style="color:#f92672">=</span> [asyncio<span style="color:#f92672">.</span>create_task(individual_task(d)) <span style="color:#66d9ef">for</span> d <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>, n_tasks <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>)]
+    <span style="color:#66d9ef">for</span> task <span style="color:#f92672">in</span> tasks:
+        await task
+
+
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+    asyncio<span style="color:#f92672">.</span>run(main(<span style="color:#ae81ff">20</span>))
+</code></pre></div><p>This program runs 20 separate tasks concurrently, each taking between 10 and 60 seconds. Since the
+program schedules all tasks while releasing the CPU, regardless of having to wait for them to
+finish, a run will take at most 60 seconds. Equivalent synchronous code would take over 10 minutes
+to run.</p>
+<h2 id="testing-the-code">Testing the code</h2>
+<p>Given that we have some code that sleeps,
+the only real functionality we need to verify is that indeed it sleeps for the right amount of time.</p>
+<p>However, there is another question a priori: how to write a test that verifies a coroutine.</p>
+<h3 id="pytest-asyncio">pytest-asyncio</h3>
+<p>The right answer to the above question is to let your test be a coroutine itself, which awaits on
+the tested coroutine. In pytest, the <a href="https://github.com/pytest-dev/pytest-asyncio">pytest-asyncio</a>
+plugin provides helpers to minimize the amount of work. Namely:</p>
+<ul>
+<li>Declare the test method using <code>async def</code>, so that it turns into a coroutine.</li>
+<li>Decorate the test with <code>pytest.mark.asyncio</code>, so that pytest detects it and runs it in its own
+event loop.</li>
+</ul>
+<p>Using this approach, we could test the <code>individual_task</code> method as follows:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> time
+<span style="color:#f92672">import</span> pytest
+<span style="color:#f92672">from</span> awaits <span style="color:#f92672">import</span> individual_task
+
+
+<span style="color:#a6e22e">@pytest.mark.asyncio</span>
+async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_individual_task</span>():
+    tic <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+    await individual_task(<span style="color:#ae81ff">2</span>)
+    tac <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+
+    <span style="color:#66d9ef">assert</span> tac <span style="color:#f92672">-</span> tic <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">10</span>
+</code></pre></div><p>If the <code>individual_task</code> did something other than sleeping, we would await on it and then perform
+assertions on the response, rather than timing the test.</p>
+<p>This approach works and produces a valid test, but it does have a problem: this test will take at
+least 10 seconds to run, and could take up to 60 seconds.</p>
+<h3 id="using-asyncmock">Using AsyncMock</h3>
+<p>There is a way to speed the tests up, which is to mock the call to <code>asyncio.sleep</code>. Just like
+python&rsquo;s <code>unittest.mock</code> provides <a href="https://docs.python.org/3.8/library/unittest.mock.html#unittest.mock.Mock"><code>Mock</code></a> objects that record calls that can be verified, starting
+from python 3.8, there is an <a href="https://docs.python.org/3.8/library/unittest.mock.html#unittest.mock.AsyncMock"><code>AsyncMock</code></a> object that records awaits. Moreover, using <a href="https://docs.python.org/3.8/library/unittest.mock.html#unittest.mock.patch"><code>mock.patch</code></a> on a coroutine will replace it by an <code>AsyncMock</code> instead of a <code>Mock</code>.</p>
+<p>Knowing this, we can mock the call to <code>sleep</code> and get a fast test. Notice how we replace the word
+<em>call</em> by <em>await</em> when making assertions on the mocked object.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pytest
+<span style="color:#f92672">from</span> unittest <span style="color:#f92672">import</span> mock
+<span style="color:#f92672">from</span> awaits <span style="color:#f92672">import</span> individual_task
+
+
+<span style="color:#a6e22e">@pytest.mark.asyncio</span>
+<span style="color:#a6e22e">@mock.patch</span>(<span style="color:#e6db74">&#34;awaits.asyncio.sleep&#34;</span>)
+async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_individual_task</span>(sleep):
+    await individual_task(<span style="color:#ae81ff">2</span>)
+    sleep<span style="color:#f92672">.</span>assert_awaited_once()
+
+    seconds <span style="color:#f92672">=</span> sleep<span style="color:#f92672">.</span>await_args<span style="color:#f92672">.</span>args[<span style="color:#ae81ff">0</span>]
+    <span style="color:#66d9ef">assert</span> seconds <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">60</span>)
+</code></pre></div><h2 id="some-general-advice">Some general advice</h2>
+<p>If you have a project to code and a concurrent approach looks like a good idea, these are some
+questions you should ask yourself before you code it away.</p>
+<h3 id="do-you-know-how-to-do-it-synchronously">Do you know how to do it synchronously?</h3>
+<p>Going async will add complexity to your code. Hence, unless you are very used to
+it, ask yourself what the synchronous version of your code would look like, even if only as an
+exercise.</p>
+<h3 id="will-i-get-away-with-it-if-i-go-for-a-synchronous-implementation">Will I get away with it if I go for a synchronous implementation?</h3>
+<p>If you do not have a performance problem, going async is a premature optimization. Synchronous code
+is much easier to manage.</p>
+<h3 id="is-async-the-right-approach">Is async the right approach?</h3>
+<p>If you do have a performance problem, then pick between an async approach, a parallel approach
+(using <code>multiprocessing</code> in python) or even a combination of both. In order to decide, it is a good
+idea to find out where the bottlenecks are and whether they are related to CPU or I/O.</p>
+<h3 id="kudos-for-integration-with-other-python-tools">Kudos for integration with other python tools</h3>
+<p>While working in this area I found that <code>asyncio</code> integrates very well with other python tools.
+Besides <code>pytest</code>, which is the subject of this post, <code>typing</code> has the matching types for coroutines
+and <code>mypy</code> detects types properly. Moreover, <code>contextlib</code> also has tools for asynchronous context
+managers. In particular, the <a href="https://docs.python.org/3/library/contextlib.html#contextlib.asynccontextmanager"><code>asynccontextmanager</code></a> decorator works like a charm together with the <code>async with</code> expression.</p>
+<h3 id="use-the-right-amount-of-mocking">Use the right amount of mocking</h3>
+<p>Mocking is a good idea to avoid making calls to other components. This will keep your unit tests
+<strong>isolated</strong> and <strong>fast</strong>; these two are very desirable properties to have.</p>
+<p>However, in my experience it is also a <em>powerful spice</em>. If one mocks away any call made within the
+unit being tested, then one very easily ends up with a test centered around implementation details.
+It is much more interesting to focus on business logic and behaviour, while not caring about
+implementation details.</p>
+<h2 id="references">References</h2>
+<ul>
+<li>Official python documentation on the <a href="https://docs.python.org/3/library/asyncio.html">asyncio library</a>.</li>
+<li>Real Python&rsquo;s <a href="https://realpython.com/async-io-python/">complete walkthrough</a>.</li>
+</ul>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

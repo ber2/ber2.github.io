@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Data Ramblings</title>
+    <link>https://ber2.github.io/posts/</link>
+    <description>Recent content in Posts on Data Ramblings</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 12 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://ber2.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>BCN PyDay 2020 Counting votes with Dask</title>
+      <link>https://ber2.github.io/posts/pyday-talk/</link>
+      <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ber2.github.io/posts/pyday-talk/</guid>
+      <description>I have given a talk at the Barcelona PyDay 2020, which is taking place as an online event on December 12th, 2020.
+The title of the talk is Counting votes: analyzing a large dataset with Dask.
+The purpose of the talk is to exhibit a use case in which Dask excels, in my opinion: working with datasets which do not fit into single machine memory but still are reasonably small not to require going to a cluster.</description>
+    </item>
+    
+    <item>
+      <title>Testing asyncio code on Python 3.9</title>
+      <link>https://ber2.github.io/posts/asyncio-testing/</link>
+      <pubDate>Sun, 01 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ber2.github.io/posts/asyncio-testing/</guid>
+      <description>A few notes on how to unit test Python asyncio code. Accompanying code available here.
+Python&amp;rsquo;s asyncio library Starting from Python 3.7, and having received a lot of attention in subsequent releases, the asyncio library provides a basis for comfortably writing concurrent code.
+This is a good idea when you are given a task which is not CPU intensive, such that your program will spend most of the time idly waiting for responses from other components.</description>
+    </item>
+    
+    <item>
+      <title>Hourly Register</title>
+      <link>https://ber2.github.io/posts/hourly-register/</link>
+      <pubDate>Sat, 26 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ber2.github.io/posts/hourly-register/</guid>
+      <description>Everybody fill up forms! The hourly register form is a document which will be familiar to paid company workers in Spain.
+Introduced by law a couple of years ago, it makes everyone register at which time they start and stop working every day. A report is filled at the end of each month, signed and archived, and never to be seen again unless the company suffers an inspection or a legal problem arises.</description>
+    </item>
+    
+    <item>
+      <title>On data classes in Python 3.8 and 3.9</title>
+      <link>https://ber2.github.io/posts/dataclasses/</link>
+      <pubDate>Thu, 24 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ber2.github.io/posts/dataclasses/</guid>
+      <description>In this post I gather a few comments and give some examples on the usage of data classes in Python.
+Data classes Data classes were introduced in Python 3.7. We could summarize them as a convenient way to represent data, since classes decorated with @dataclass will supply methods such as __init__() or __repr__() without having to define them.
+Parameter types are indicated using type annotations, so a data class declaration will look like this:</description>
+    </item>
+    
+  </channel>
+</rss>
