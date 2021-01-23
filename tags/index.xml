@@ -6,7 +6,34 @@
     <description>Recent content in Tags on Data Ramblings</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 12 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://ber2.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Jan 2021 18:28:22 +0100</lastBuildDate><atom:link href="https://ber2.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>dark theme</title>
+      <link>https://ber2.github.io/tags/dark-theme/</link>
+      <pubDate>Sat, 23 Jan 2021 18:28:22 +0100</pubDate>
+      
+      <guid>https://ber2.github.io/tags/dark-theme/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>https://ber2.github.io/tags/hugo/</link>
+      <pubDate>Sat, 23 Jan 2021 18:28:22 +0100</pubDate>
+      
+      <guid>https://ber2.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jekyll</title>
+      <link>https://ber2.github.io/tags/jekyll/</link>
+      <pubDate>Sat, 23 Jan 2021 18:28:22 +0100</pubDate>
+      
+      <guid>https://ber2.github.io/tags/jekyll/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>dask</title>
       <link>https://ber2.github.io/tags/dask/</link>
