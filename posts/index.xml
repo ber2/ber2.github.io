@@ -6,7 +6,17 @@
     <description>Recent content in Posts on Data Ramblings</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 23 Jan 2021 18:28:22 +0100</lastBuildDate><atom:link href="https://ber2.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 10 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ber2.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hashing documents during the Cookiepocalypse</title>
+      <link>https://ber2.github.io/posts/simhash/</link>
+      <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ber2.github.io/posts/simhash/</guid>
+      <description>The FLoC proposal As part of their phasing-out of third party cookies and rolling out of the Privacy Sandbox, Google have announced their intentions to replace third party cookies in Chrome. The strategy is to replace each of the functions served by third party cookies in web advertising, one by one, by individual devices that preserve user privacy.
+Federated Learning of Cohorts (FLoC) is the replacement for cross-site user tracking on Google Chrome.</description>
+    </item>
+    
     <item>
       <title>New Look</title>
       <link>https://ber2.github.io/posts/new-look/</link>

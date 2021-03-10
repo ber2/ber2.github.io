@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Hashing documents during the Cookiepocalypse // Data Ramblings</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.80.0-DEV" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Alberto Cámara" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://ber2.github.io/css/main.min.68e582a4d4ed824d6b7e3b5b37cae47eb3779bd631046379d0e68b38230cc3e2.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Hashing documents during the Cookiepocalypse"/>
+<meta name="twitter:description" content="The FLoC proposal As part of their phasing-out of third party cookies and rolling out of the Privacy Sandbox, Google have announced their intentions to replace third party cookies in Chrome. The strategy is to replace each of the functions served by third party cookies in web advertising, one by one, by individual devices that preserve user privacy.
+Federated Learning of Cohorts (FLoC) is the replacement for cross-site user tracking on Google Chrome."/>
+
+    <meta property="og:title" content="Hashing documents during the Cookiepocalypse" />
+<meta property="og:description" content="The FLoC proposal As part of their phasing-out of third party cookies and rolling out of the Privacy Sandbox, Google have announced their intentions to replace third party cookies in Chrome. The strategy is to replace each of the functions served by third party cookies in web advertising, one by one, by individual devices that preserve user privacy.
+Federated Learning of Cohorts (FLoC) is the replacement for cross-site user tracking on Google Chrome." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ber2.github.io/posts/simhash/" />
+<meta property="article:published_time" content="2021-03-10T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-03-10T00:00:00+00:00" />
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://ber2.github.io/"><img class="app-header-avatar" src="/images/pingu.jpg" alt="Alberto Cámara" /></a>
+      <h1>Data Ramblings</h1>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/">Home</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/about">About</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/tags">Tags</a>
+      </nav>
+      <p>Alberto Cámara</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/ber2" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+          <a target="_blank" href="https://twitter.com/b3r2s" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-twitter">
+  <title>twitter</title>
+  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+</svg></a>
+        
+          <a target="_blank" href="https://www.linkedin.com/in/alberto-camara/" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-linkedin">
+  <title>linkedin</title>
+  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Hashing documents during the Cookiepocalypse</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Mar 10, 2021
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          3 min read
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h2 id="the-floc-proposal">The FLoC proposal</h2>
+<p>As part of their phasing-out of third party cookies and rolling out of the <a href="https://blog.google/products/ads-commerce/2021-01-privacy-sandbox/">Privacy Sandbox</a>, Google have announced their intentions to replace third party cookies in Chrome.
+The strategy is to replace each of the functions served by third party cookies in web advertising, one by one, by individual devices that preserve user privacy.</p>
+<p><a href="https://github.com/WICG/floc">Federated Learning of Cohorts</a> (<strong>FLoC</strong>) is the replacement for cross-site user tracking on Google Chrome.
+In order to enable targeting based on browsing interests without cookie identifiers, the user&rsquo;s browser computes a <strong>cohort identifier</strong>, that is: a hash of the browsing history.</p>
+<p>We expect the following to happen:</p>
+<ul>
+<li>
+<p>Users with similar browsing behaviours end up having the same hash, so it is still possible to show relevant ads by targeting a given cohort id.</p>
+</li>
+<li>
+<p>Cohorts contain enough users to allow a <em>hiding in the pack</em> effect, where an individual&rsquo;s activity is not distinguishable.</p>
+</li>
+</ul>
+<h2 id="enter-locality-sensitive-hashing-techniques">Enter locality-sensitive hashing techniques</h2>
+<p>The candidate algorithm to achieve the above goal is <a href="https://en.wikipedia.org/wiki/SimHash">SimHash</a>, which is commonly used to detect near-duplicates by search engines.
+After vectorizing a user&rsquo;s browsing history, the <code>p</code>-bit <code>SimHash</code> algorithm works in the following way:</p>
+<ul>
+<li>
+<p>Choose <code>p</code> random unit vectors in feature space. These determine <code>p</code> hyperplanes passing through origin, by relating each hyperplane to its normal vector.</p>
+</li>
+<li>
+<p>These <code>p</code> hyperplanes determine a partition of space into <code>2^p</code> regions.</p>
+</li>
+<li>
+<p>Encode each of the above regions as an integer in base <code>2</code> (ie: pick an ordering of the <code>p</code> unit vectors).</p>
+</li>
+<li>
+<p>The hash of a vector (ie: a user&rsquo;s browsing history) is determined by the region to which it belongs.</p>
+</li>
+</ul>
+<h2 id="an-implementation-in-python">An implementation in Python</h2>
+<p>When we set out to study the impact of replacing cookies by cohorts in our Machine Learning pipelines at <a href="https://hybridtheory.com/">Hybrid Theory</a>, I was unable to find an implementation of the SimHash algorithm in pure Python that served the purposes.
+So we coded and open-sourced one, and published it as a python package under the name of <a href="https://pypi.org/project/floc-simhash/"><strong>floc-simhash</strong></a>.</p>
+<p>This implementation has allowed us to conduct preliminary analysis on our own datasets, while we wait for Google&rsquo;s Origin Trial to begin later in this month of March, 2021.</p>
+<p>While waiting for details regarding the final form of the FLoC implementation, we have provided two implementations of SimHash:</p>
+<ul>
+<li>
+<p>One based directly on bitwise arithmetic of <strong>md5 hashes</strong> of individual tokens, aimed at hashing any given text document.</p>
+</li>
+<li>
+<p>One designed as a <strong>scikit-learn pipeline</strong>, that works on a document vectorization such as <strong>OneHot</strong> or <strong>TfIdf</strong>, taking advantage of the vectorization power of numpy arrays and scipy sparse matrices.</p>
+</li>
+</ul>
+<p>For more details and examples, please refer to the <a href="https://github.com/hybridtheory/floc-simhash">README</a>.</p>
+<h2 id="open-questions">Open questions</h2>
+<p>While we are waiting, as mentioned earlier, for implementation details, the most recent news point towards:</p>
+<ul>
+<li>
+<p>A hashing algorithm combining <code>SimHash</code> with the so-called <code>SortingLHS</code> technique, which consists of cropping the number of bits in the hash in order to have less cohorts. The resulting hashes lie around <code>50</code>-bit precision.</p>
+</li>
+<li>
+<p>User browsing history to be constrained to the previous seven days.</p>
+</li>
+<li>
+<p>An implementation of FLoC which will be computed directly on the user&rsquo;s browser.
+Thus, browsing history need not be shared with a central API for the purposes of computing cohort ids.</p>
+</li>
+</ul>
+<p>These, however, will be subject to change depending on the Origin Trial results.</p>
+<p>More generally, the question regarding the eventual adoption of FLoC remains.</p>
+<p>In the next few months, we aim at deciding whether the cookiepocalypse results in having to re-think the whole approach to selling ads online or, as claimed in the <a href="https://raw.githubusercontent.com/google/ads-privacy/master/proposals/FLoC/FLOC-Whitepaper-Google.pdf">original proposal</a>, FLoCs are performant enough to allow for the cross-targeting approach to survive on Google Chrome.</p>
+<h2 id="references">References</h2>
+<ul>
+<li>
+<p><a href="https://github.com/hybridtheory/floc-simhash">GitHub repository</a>, containing installation instructions and examples.</p>
+</li>
+<li>
+<p><a href="https://pypi.org/project/floc-simhash/">PyPI package</a>. Please install by calling <code>pip install</code>.</p>
+</li>
+<li>
+<p><a href="https://engineering.hybridtheory.com/engineering/open-source/python/2021/03/09/floc-simhash-opensource/">Post</a> in our engineering blog at Hybrid Theory.</p>
+</li>
+<li>
+<p><a href="https://www.linkedin.com/posts/hybridtheory_investigating-googles-floc-open-sourcing-activity-6775098443296718848-YngA">Company announcement</a> at LinkedIn.</p>
+</li>
+<li>
+<p>The repository for the <a href="https://github.com/WICG/floc">FLoC</a> proposal at GitHub.</p>
+</li>
+<li>
+<p>The proposal <a href="https://raw.githubusercontent.com/google/ads-privacy/master/proposals/FLoC/FLOC-Whitepaper-Google.pdf">whitepaper</a>.</p>
+</li>
+</ul>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
