@@ -6,7 +6,18 @@
     <description>Recent content on Data Ramblings</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 10 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ber2.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ber2.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Getting PyMC3 to work</title>
+      <link>https://ber2.github.io/posts/pymc/</link>
+      <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ber2.github.io/posts/pymc/</guid>
+      <description>In the last few days, I have been diving into Cameron Davidson-Pilon&amp;rsquo;s book Bayesian Methods for Hackers, available here.
+The book is an excellent, practical introduction to probabilistic programming and, more precisely, to the usage of Markov Chain Monte Carlo, purely in Python and using PyMC.
+The printed version of the book was published a while ago and uses the PyMC library over Python 2.7. Since then, the ecosystem has changed a bit, with the publication of PyMC3, which updates the library to Python 3.</description>
+    </item>
+    
     <item>
       <title>Hashing documents during the Cookiepocalypse</title>
       <link>https://ber2.github.io/posts/simhash/</link>
@@ -34,9 +45,11 @@ I have also taken the chance to go for a dark theme called m10c, because I find 
       
       <guid>https://ber2.github.io/about/</guid>
       <description>I come from Montserrat.
-I am a Maths PhD currently based in the Barcelona area, doing stuff with data. When I am not in front of a screen I try to get to the mountains.
-In here I write about my own projects and stuff that caught my attention, mostly in the area of data science &amp;amp; analysis in Python and functional programming in Scala.
-Opinions are my own.</description>
+I am a Maths PhD currently based in the Barcelona area.
+I work as a Data Scientist at Hybrid Theory.
+I have a wide range of technical interests:
+ Data Science, Engineering and Analysis Functional Programming Parallel Computation Deep Learning Natural Language Processing Bayesian Inference Automating boring stuff Test-Driven Development  Most of the time I code in Python, Scala and SQL.
+When I am not in front of a screen I try to get to the mountains.</description>
     </item>
     
     <item>

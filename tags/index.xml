@@ -6,7 +6,70 @@
     <description>Recent content in Tags on Data Ramblings</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 23 Jan 2021 18:28:22 +0100</lastBuildDate><atom:link href="https://ber2.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ber2.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>anaconda</title>
+      <link>https://ber2.github.io/tags/anaconda/</link>
+      <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ber2.github.io/tags/anaconda/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>arviz</title>
+      <link>https://ber2.github.io/tags/arviz/</link>
+      <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ber2.github.io/tags/arviz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bayesian</title>
+      <link>https://ber2.github.io/tags/bayesian/</link>
+      <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ber2.github.io/tags/bayesian/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>inference</title>
+      <link>https://ber2.github.io/tags/inference/</link>
+      <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ber2.github.io/tags/inference/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>probabilistic</title>
+      <link>https://ber2.github.io/tags/probabilistic/</link>
+      <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ber2.github.io/tags/probabilistic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pymc3</title>
+      <link>https://ber2.github.io/tags/pymc3/</link>
+      <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ber2.github.io/tags/pymc3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>theano</title>
+      <link>https://ber2.github.io/tags/theano/</link>
+      <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ber2.github.io/tags/theano/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>dark theme</title>
       <link>https://ber2.github.io/tags/dark-theme/</link>
