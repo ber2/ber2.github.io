@@ -4,7 +4,7 @@
     <title>Hourly Register // Data Ramblings</title>
     <link rel="shortcut icon" href="/favicon.ico" />
     <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.80.0-DEV" />
+    <meta name="generator" content="Hugo 0.92.2" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Alberto Cámara" />
     <meta name="description" content="" />
@@ -20,9 +20,10 @@ Introduced by law a couple of years ago, it makes everyone register at which tim
 <meta property="og:description" content="Everybody fill up forms! The hourly register form is a document which will be familiar to paid company workers in Spain.
 Introduced by law a couple of years ago, it makes everyone register at which time they start and stop working every day. A report is filled at the end of each month, signed and archived, and never to be seen again unless the company suffers an inspection or a legal problem arises." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ber2.github.io/posts/hourly-register/" />
+<meta property="og:url" content="https://ber2.github.io/posts/hourly-register/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-09-26T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-09-26T00:00:00+00:00" />
+
 
 
   </head>
@@ -35,6 +36,9 @@ Introduced by law a couple of years ago, it makes everyone register at which tim
              - 
           
           <a class="app-header-menu-item" href="/about">About</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/talks">Talks</a>
              - 
           
           <a class="app-header-menu-item" href="/tags">Tags</a>
@@ -129,7 +133,7 @@ looks like this:</p>
 readability and, since I wanted to supply an detailed example, the ability to introduce comments was
 handy.</p>
 <p>The really important bit, which is subject to change from month to month, is at the top:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># Year and month of the report</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># Year and month of the report</span>
 <span style="color:#f92672">year</span>: <span style="color:#ae81ff">2020</span>
 <span style="color:#f92672">month</span>: <span style="color:#ae81ff">9</span>
 
@@ -147,7 +151,7 @@ handy.</p>
     - <span style="color:#ae81ff">24</span>
 </code></pre></div><p>The rest of the config file should be customized with personal worker and company data, and is not
 expected to change over time.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># Hours at which you start work, stop for lunch break,</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># Hours at which you start work, stop for lunch break,</span>
 <span style="color:#75715e"># get back to work, and finish.</span>
 <span style="color:#f92672">working hours</span>:
   - <span style="color:#ae81ff">9</span>

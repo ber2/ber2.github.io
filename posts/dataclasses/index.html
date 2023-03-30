@@ -4,7 +4,7 @@
     <title>On data classes in Python 3.8 and 3.9 // Data Ramblings</title>
     <link rel="shortcut icon" href="/favicon.ico" />
     <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.80.0-DEV" />
+    <meta name="generator" content="Hugo 0.92.2" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Alberto Cámara" />
     <meta name="description" content="" />
@@ -22,9 +22,10 @@ Parameter types are indicated using type annotations, so a data class declaratio
 Data classes Data classes were introduced in Python 3.7. We could summarize them as a convenient way to represent data, since classes decorated with @dataclass will supply methods such as __init__() or __repr__() without having to define them.
 Parameter types are indicated using type annotations, so a data class declaration will look like this:" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ber2.github.io/posts/dataclasses/" />
+<meta property="og:url" content="https://ber2.github.io/posts/dataclasses/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-09-24T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-09-24T00:00:00+00:00" />
+
 
 
   </head>
@@ -37,6 +38,9 @@ Parameter types are indicated using type annotations, so a data class declaratio
              - 
           
           <a class="app-header-menu-item" href="/about">About</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/talks">Talks</a>
              - 
           
           <a class="app-header-menu-item" href="/tags">Tags</a>
@@ -99,7 +103,7 @@ We could summarize them as a convenient way to represent data, since classes dec
 <code>@dataclass</code> will supply methods such as <code>__init__()</code> or <code>__repr__()</code> without having to define them.</p>
 <p>Parameter types are indicated using type annotations, so a data class declaration will look like
 this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> dataclasses <span style="color:#f92672">import</span> dataclass
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> dataclasses <span style="color:#f92672">import</span> dataclass
 
 <span style="color:#a6e22e">@dataclass</span>
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span>:
@@ -116,10 +120,10 @@ a Scala <a href="https://docs.scala-lang.org/tour/case-classes.html">case class<
 both allow passing in typed parameters and have automated instantiation. However, the analogy stops
 here, and this is mostly due to the nature of both programming languages.</p>
 <p>With the definition above, the instantiation below is correct.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">In [<span style="color:#ae81ff">1</span>]: Person(<span style="color:#e6db74">&#34;Bertu&#34;</span>, <span style="color:#ae81ff">18</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">In [<span style="color:#ae81ff">1</span>]: Person(<span style="color:#e6db74">&#34;Bertu&#34;</span>, <span style="color:#ae81ff">18</span>)
 Out[<span style="color:#ae81ff">1</span>]: Person(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Bertu&#39;</span>, age<span style="color:#f92672">=</span><span style="color:#ae81ff">18</span>)
 </code></pre></div><p>And the following also works <strong>without raising an exception</strong>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">In [<span style="color:#ae81ff">2</span>]: Person(<span style="color:#e6db74">&#34;Bertu&#34;</span>, <span style="color:#e6db74">&#34;18&#34;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">In [<span style="color:#ae81ff">2</span>]: Person(<span style="color:#e6db74">&#34;Bertu&#34;</span>, <span style="color:#e6db74">&#34;18&#34;</span>)
 Out[<span style="color:#ae81ff">2</span>]: Person(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Bertu&#39;</span>, age<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;18&#39;</span>)
 </code></pre></div><p>We would have to rely on <code>mypy</code> to point out that <code>age</code> is expected to be an integer.</p>
 <p>At the end of the day, Python is dynamically typed and checking the types of attributes in
@@ -133,9 +137,9 @@ received a string instead of an integer.</p>
 mean that values are <strong>immutable</strong>. This is a must-have when manipulating large amounts of data and
 computing in parallel.</p>
 <p>Python data classes can be made to <em>look immutable</em>. More precisely, they may be <strong>frozen</strong>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> dataclasses <span style="color:#f92672">import</span> dataclass
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> dataclasses <span style="color:#f92672">import</span> dataclass
 
-<span style="color:#a6e22e">@dataclass</span>(frozen<span style="color:#f92672">=</span>True)
+<span style="color:#a6e22e">@dataclass</span>(frozen<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span>:
     name: str
     age: str
@@ -143,7 +147,7 @@ computing in parallel.</p>
 to having an immutable value, but always remember that <strong>everything in Python is mutable</strong>.</p>
 <p>How would we go about updating a frozen data class after instantiation? The init parameters are
 governed by an underlying dictionary, so it is enough to access that dictionary and update it.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">In [<span style="color:#ae81ff">3</span>]: b <span style="color:#f92672">=</span> Person(<span style="color:#e6db74">&#34;Bertu&#34;</span>, <span style="color:#ae81ff">18</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">In [<span style="color:#ae81ff">3</span>]: b <span style="color:#f92672">=</span> Person(<span style="color:#e6db74">&#34;Bertu&#34;</span>, <span style="color:#ae81ff">18</span>)
 
 In [<span style="color:#ae81ff">4</span>]: b<span style="color:#f92672">.</span>age <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>
 <span style="color:#f92672">-----------------------------------------------</span>
@@ -175,7 +179,7 @@ and Sundays.</li>
 <li>Holidays: either bank holidays or vacations.</li>
 </ul>
 <p>I defined a data class describing this structure and performing a post-init validation as follows:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> dataclasses <span style="color:#f92672">import</span> dataclass, field
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> dataclasses <span style="color:#f92672">import</span> dataclass, field
 <span style="color:#f92672">from</span> typing <span style="color:#f92672">import</span> List
 
 <span style="color:#a6e22e">@dataclass</span>
@@ -198,7 +202,7 @@ in <code>__post_init__()</code>.</p>
 soon</a>, implements <a href="https://www.python.org/dev/peps/pep-0585/">PEP 585</a>, which includes of <a href="https://docs.python.org/3.9/whatsnew/3.9.html#pep-585-builtin-generic-types">built-in generic
 types</a>. In particular,
 it will be possible to stop importing <code>typing.List</code> and leave <code>list</code> as a type hint:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">weekdays: list[int]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">weekdays: list[int]
 </code></pre></div><p>The same applies to <code>dict</code> and a few other frequently used types.</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>I would say that data classes are a very handy tool when it comes to representing and manipulating

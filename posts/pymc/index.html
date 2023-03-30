@@ -4,7 +4,7 @@
     <title>Getting PyMC3 to work // Data Ramblings</title>
     <link rel="shortcut icon" href="/favicon.ico" />
     <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.80.0-DEV" />
+    <meta name="generator" content="Hugo 0.92.2" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Alberto Cámara" />
     <meta name="description" content="" />
@@ -22,9 +22,10 @@ The printed version of the book was published a while ago and uses the PyMC libr
 The book is an excellent, practical introduction to probabilistic programming and, more precisely, to the usage of Markov Chain Monte Carlo, purely in Python and using PyMC.
 The printed version of the book was published a while ago and uses the PyMC library over Python 2.7. Since then, the ecosystem has changed a bit, with the publication of PyMC3, which updates the library to Python 3." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ber2.github.io/posts/pymc/" />
+<meta property="og:url" content="https://ber2.github.io/posts/pymc/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-03-21T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-03-21T00:00:00+00:00" />
+
 
 
   </head>
@@ -37,6 +38,9 @@ The printed version of the book was published a while ago and uses the PyMC libr
              - 
           
           <a class="app-header-menu-item" href="/about">About</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/talks">Talks</a>
              - 
           
           <a class="app-header-menu-item" href="/tags">Tags</a>
@@ -106,7 +110,7 @@ Although the Jupyter notebooks from the book have been updated to this context (
 <h2 id="installation">Installation</h2>
 <p><strong>TL;DR:</strong> Use <strong>conda</strong> (and <strong>pyenv</strong>).</p>
 <p>More precisely, use <a href="https://github.com/pyenv/pyenv">pyenv</a> together with the <a href="https://github.com/pyenv/pyenv-virtualenv">pyenv-virtualenv</a> plugin to install anaconda, then install PyMC3 from the conda-forge repository.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pyenv install anaconda3-5.3.1 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pyenv install anaconda3-5.3.1 
 pyenv virtualenv anaconda3-5.3.1 pymctest
 pyenv activate pymctest
 conda install -c conda-forge pymc3
