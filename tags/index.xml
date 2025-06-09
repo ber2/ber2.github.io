@@ -1,209 +1,180 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Data Ramblings</title>
+    <title>Tags on Alberto Cámara</title>
     <link>https://ber2.github.io/tags/</link>
-    <description>Recent content in Tags on Data Ramblings</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Tags on Alberto Cámara</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 21 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ber2.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://ber2.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>anaconda</title>
+      <title>Anaconda</title>
       <link>https://ber2.github.io/tags/anaconda/</link>
       <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://ber2.github.io/tags/anaconda/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>arviz</title>
+      <title>Arviz</title>
       <link>https://ber2.github.io/tags/arviz/</link>
       <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://ber2.github.io/tags/arviz/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>bayesian</title>
+      <title>Bayesian</title>
       <link>https://ber2.github.io/tags/bayesian/</link>
       <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://ber2.github.io/tags/bayesian/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>inference</title>
+      <title>Inference</title>
       <link>https://ber2.github.io/tags/inference/</link>
       <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://ber2.github.io/tags/inference/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>probabilistic</title>
+      <title>Probabilistic</title>
       <link>https://ber2.github.io/tags/probabilistic/</link>
       <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://ber2.github.io/tags/probabilistic/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>pymc3</title>
+      <title>Pymc3</title>
       <link>https://ber2.github.io/tags/pymc3/</link>
       <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://ber2.github.io/tags/pymc3/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>theano</title>
+      <title>Theano</title>
       <link>https://ber2.github.io/tags/theano/</link>
       <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://ber2.github.io/tags/theano/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>dark theme</title>
-      <link>https://ber2.github.io/tags/dark-theme/</link>
-      <pubDate>Sat, 23 Jan 2021 18:28:22 +0100</pubDate>
-      
-      <guid>https://ber2.github.io/tags/dark-theme/</guid>
+      <title>Hashing</title>
+      <link>https://ber2.github.io/tags/hashing/</link>
+      <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://ber2.github.io/tags/hashing/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>hugo</title>
-      <link>https://ber2.github.io/tags/hugo/</link>
-      <pubDate>Sat, 23 Jan 2021 18:28:22 +0100</pubDate>
-      
-      <guid>https://ber2.github.io/tags/hugo/</guid>
+      <title>Online Advertising</title>
+      <link>https://ber2.github.io/tags/online-advertising/</link>
+      <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://ber2.github.io/tags/online-advertising/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>jekyll</title>
-      <link>https://ber2.github.io/tags/jekyll/</link>
-      <pubDate>Sat, 23 Jan 2021 18:28:22 +0100</pubDate>
-      
-      <guid>https://ber2.github.io/tags/jekyll/</guid>
+      <title>Simhash</title>
+      <link>https://ber2.github.io/tags/simhash/</link>
+      <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://ber2.github.io/tags/simhash/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>dask</title>
+      <title>Third-Party Cookies</title>
+      <link>https://ber2.github.io/tags/third-party-cookies/</link>
+      <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://ber2.github.io/tags/third-party-cookies/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dask</title>
       <link>https://ber2.github.io/tags/dask/</link>
       <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://ber2.github.io/tags/dask/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>parallel</title>
+      <title>Parallel</title>
       <link>https://ber2.github.io/tags/parallel/</link>
       <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://ber2.github.io/tags/parallel/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>python</title>
+      <title>Python</title>
       <link>https://ber2.github.io/tags/python/</link>
       <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://ber2.github.io/tags/python/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>asyncio</title>
+      <title>Asyncio</title>
       <link>https://ber2.github.io/tags/asyncio/</link>
       <pubDate>Sun, 01 Nov 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://ber2.github.io/tags/asyncio/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>tdd testing</title>
-      <link>https://ber2.github.io/tags/tdd-testing/</link>
+      <title>Test-Driven Development</title>
+      <link>https://ber2.github.io/tags/test-driven-development/</link>
       <pubDate>Sun, 01 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://ber2.github.io/tags/tdd-testing/</guid>
+      <guid>https://ber2.github.io/tags/test-driven-development/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>automation</title>
+      <title>Testing</title>
+      <link>https://ber2.github.io/tags/testing/</link>
+      <pubDate>Sun, 01 Nov 2020 00:00:00 +0000</pubDate>
+      <guid>https://ber2.github.io/tags/testing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Automation</title>
       <link>https://ber2.github.io/tags/automation/</link>
       <pubDate>Sat, 26 Sep 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://ber2.github.io/tags/automation/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>jinja</title>
+      <title>Jinja</title>
       <link>https://ber2.github.io/tags/jinja/</link>
       <pubDate>Sat, 26 Sep 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://ber2.github.io/tags/jinja/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>latex</title>
+      <title>Latex</title>
       <link>https://ber2.github.io/tags/latex/</link>
       <pubDate>Sat, 26 Sep 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://ber2.github.io/tags/latex/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>scripts</title>
+      <title>Scripts</title>
       <link>https://ber2.github.io/tags/scripts/</link>
       <pubDate>Sat, 26 Sep 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://ber2.github.io/tags/scripts/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>data classes</title>
+      <title>Data Classes</title>
       <link>https://ber2.github.io/tags/data-classes/</link>
       <pubDate>Thu, 24 Sep 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://ber2.github.io/tags/data-classes/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>scala</title>
+      <title>Scala</title>
       <link>https://ber2.github.io/tags/scala/</link>
       <pubDate>Thu, 24 Sep 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://ber2.github.io/tags/scala/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>type safety</title>
+      <title>Type Safety</title>
       <link>https://ber2.github.io/tags/type-safety/</link>
       <pubDate>Thu, 24 Sep 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://ber2.github.io/tags/type-safety/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

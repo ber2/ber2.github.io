@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>data classes on Data Ramblings</title>
+    <title>Data Classes on Alberto Cámara</title>
     <link>https://ber2.github.io/tags/data-classes/</link>
-    <description>Recent content in data classes on Data Ramblings</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Data Classes on Alberto Cámara</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 24 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://ber2.github.io/tags/data-classes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 24 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://ber2.github.io/tags/data-classes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>On data classes in Python 3.8 and 3.9</title>
       <link>https://ber2.github.io/posts/dataclasses/</link>
       <pubDate>Thu, 24 Sep 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://ber2.github.io/posts/dataclasses/</guid>
-      <description>In this post I gather a few comments and give some examples on the usage of data classes in Python.
-Data classes Data classes were introduced in Python 3.7. We could summarize them as a convenient way to represent data, since classes decorated with @dataclass will supply methods such as __init__() or __repr__() without having to define them.
-Parameter types are indicated using type annotations, so a data class declaration will look like this:</description>
+      <description>&lt;p&gt;In this post I gather a few comments and give some examples on the usage of &lt;strong&gt;data classes in Python&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;data-classes&#34;&gt;Data classes&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://docs.python.org/3/library/dataclasses.html&#34;&gt;Data classes&lt;/a&gt; were introduced in Python 3.7.&#xA;We could summarize them as a convenient way to represent data, since classes decorated with&#xA;&lt;code&gt;@dataclass&lt;/code&gt; will supply methods such as &lt;code&gt;__init__()&lt;/code&gt; or &lt;code&gt;__repr__()&lt;/code&gt; without having to define them.&lt;/p&gt;&#xA;&lt;p&gt;Parameter types are indicated using type annotations, so a data class declaration will look like&#xA;this:&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

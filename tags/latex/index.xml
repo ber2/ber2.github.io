@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>latex on Data Ramblings</title>
+    <title>Latex on Alberto Cámara</title>
     <link>https://ber2.github.io/tags/latex/</link>
-    <description>Recent content in latex on Data Ramblings</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Latex on Alberto Cámara</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 26 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://ber2.github.io/tags/latex/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 26 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://ber2.github.io/tags/latex/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hourly Register</title>
       <link>https://ber2.github.io/posts/hourly-register/</link>
       <pubDate>Sat, 26 Sep 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://ber2.github.io/posts/hourly-register/</guid>
-      <description>Everybody fill up forms! The hourly register form is a document which will be familiar to paid company workers in Spain.
-Introduced by law a couple of years ago, it makes everyone register at which time they start and stop working every day. A report is filled at the end of each month, signed and archived, and never to be seen again unless the company suffers an inspection or a legal problem arises.</description>
+      <description>&lt;h2 id=&#34;everybody-fill-up-forms&#34;&gt;Everybody fill up forms!&lt;/h2&gt;&#xA;&lt;p&gt;The &lt;strong&gt;hourly register form&lt;/strong&gt; is a document which will be familiar to paid company workers in Spain.&lt;/p&gt;&#xA;&lt;p&gt;Introduced by law a couple of years ago, it makes everyone register at which time they start and&#xA;stop working every day. A report is filled at the end of each month, signed and archived, and never&#xA;to be seen again unless the company suffers an inspection or a legal problem arises.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

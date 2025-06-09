@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Third-Party Cookies on Alberto Cámara</title>
+    <link>https://ber2.github.io/tags/third-party-cookies/</link>
+    <description>Recent content in Third-Party Cookies on Alberto Cámara</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 10 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://ber2.github.io/tags/third-party-cookies/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hashing documents during the Cookiepocalypse</title>
+      <link>https://ber2.github.io/posts/simhash/</link>
+      <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://ber2.github.io/posts/simhash/</guid>
+      <description>&lt;h2 id=&#34;the-floc-proposal&#34;&gt;The FLoC proposal&lt;/h2&gt;&#xA;&lt;p&gt;As part of their phasing-out of third party cookies and rolling out of the &lt;a href=&#34;https://blog.google/products/ads-commerce/2021-01-privacy-sandbox/&#34;&gt;Privacy Sandbox&lt;/a&gt;, Google have announced their intentions to replace third party cookies in Chrome.&#xA;The strategy is to replace each of the functions served by third party cookies in web advertising, one by one, by individual devices that preserve user privacy.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/WICG/floc&#34;&gt;Federated Learning of Cohorts&lt;/a&gt; (&lt;strong&gt;FLoC&lt;/strong&gt;) is the replacement for cross-site user tracking on Google Chrome.&#xA;In order to enable targeting based on browsing interests without cookie identifiers, the user&amp;rsquo;s browser computes a &lt;strong&gt;cohort identifier&lt;/strong&gt;, that is: a hash of the browsing history.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,109 +1,75 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Data Ramblings</title>
+    <title>Alberto Cámara</title>
     <link>https://ber2.github.io/</link>
-    <description>Recent content on Data Ramblings</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content on Alberto Cámara</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 21 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ber2.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 07 Jun 2025 11:11:56 +0200</lastBuildDate>
+    <atom:link href="https://ber2.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CV</title>
+      <link>https://ber2.github.io/cv/</link>
+      <pubDate>Sat, 07 Jun 2025 11:11:56 +0200</pubDate>
+      <guid>https://ber2.github.io/cv/</guid>
+      <description>&lt;p&gt;This is a summarised version of my CV. Please &lt;a href=&#34;../contact&#34;&gt;get in touch&lt;/a&gt; for a complete PDF version. Similar information is available in my &lt;a href=&#34;https://www.linkedin.com/in/alberto-camara/&#34;&gt;LinkedIn profile&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;past-experience&#34;&gt;Past Experience&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;2021&amp;ndash;2025 &lt;strong&gt;Lead Data Scientist&lt;/strong&gt;, Hybrid Theory, Barcelona.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;2020&amp;ndash;2021 &lt;strong&gt;Senior Data Scientist&lt;/strong&gt;, Affectv, Barcelona.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;2017&amp;ndash;2020 &lt;strong&gt;Chief Research Officer&lt;/strong&gt;, Bit Physical Retail SL, Barcelona.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;2015&amp;ndash;2017 &lt;strong&gt;Research Fellow&lt;/strong&gt;, University of Nottingham, United Kingdom.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;2014&amp;ndash;2015 &lt;strong&gt;Investigador postdoctoral&lt;/strong&gt;, Institut de Matemàtica, Universitat de Barcelona, Barcelona&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;2013&amp;ndash;2014 &lt;strong&gt;Chercheur postdoctoral&lt;/strong&gt;, Laboratoire de Mathématiques de Besançon, Université de Franche-Comté, France.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Contact</title>
+      <link>https://ber2.github.io/contact/</link>
+      <pubDate>Sat, 07 Jun 2025 11:09:45 +0200</pubDate>
+      <guid>https://ber2.github.io/contact/</guid>
+      <description>&lt;p&gt;The easiest way to get in touch with me is to email me directly at &lt;strong&gt;camara (at) pm.me&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;I may also be reached via &lt;a href=&#34;https://www.linkedin.com/in/alberto-camara/&#34;&gt;linkedin&lt;/a&gt; message.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Talks</title>
       <link>https://ber2.github.io/talks/</link>
       <pubDate>Thu, 30 Mar 2023 07:05:39 +0200</pubDate>
-      
       <guid>https://ber2.github.io/talks/</guid>
-      <description>A selection of talks and associated materials.
-Using Data Sketches to extract fast &amp;amp; cheap insights from Big Data  Date: July 3rd, 2023 Place: DevBcn Conference 2023, La Farga, l&amp;rsquo;Hospitalet Links: conference, talk, slides  The Archival Datathon: ML competition tips  Date: March 30th, 2022 Place: PyBcn Meetup, held at the Ocado offices Links: meetup, slides  Property-based testing with hypothesis  Date: November 25th, 2021 Place: PyBcn Meetup, held at the TravelPerk offices Links: meetup, slides  Counting votes: analyzing a large dataset with Dask  Date: December 12th, 2020 Place: PyDay 2020, online event Links: website, slides, youtube  Building a validation scheme for a REST API using Voluptuous  Date: April 25th, 2019 Place: PyBcn Meetup, held at the TravelPerk offices Links: meetup, slides  </description>
+      <description>&lt;p&gt;A selection of talks and associated materials.&lt;/p&gt;&#xA;&lt;h4 id=&#34;using-data-sketches-to-extract-fast--cheap-insights-from-big-data&#34;&gt;Using Data Sketches to extract fast &amp;amp; cheap insights from Big Data&lt;/h4&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Date&lt;/strong&gt;: July 3rd, 2023&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Place&lt;/strong&gt;: DevBcn Conference 2023, La Farga, l&amp;rsquo;Hospitalet&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Links&lt;/strong&gt;:&#xA;&lt;a href=&#34;https://ber2.github.io/slides/2023-07-04-using-data-sketches/&#34;&gt;slides&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h4 id=&#34;the-archival-datathon-ml-competition-tips&#34;&gt;The Archival Datathon: ML competition tips&lt;/h4&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Date&lt;/strong&gt;: March 30th, 2022&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Place&lt;/strong&gt;: PyBcn Meetup, held at the Ocado offices&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Links&lt;/strong&gt;:&#xA;&lt;a href=&#34;https://www.meetup.com/python-barcelona/events/292399353/&#34;&gt;meetup&lt;/a&gt;,&#xA;&lt;a href=&#34;https://ber2.github.io/slides/2023-03-30-archival-datathon/slides.html&#34;&gt;slides&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h4 id=&#34;property-based-testing-with-hypothesis&#34;&gt;Property-based testing with hypothesis&lt;/h4&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Date&lt;/strong&gt;: November 25th, 2021&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Place&lt;/strong&gt;: PyBcn Meetup, held at the TravelPerk offices&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Links&lt;/strong&gt;:&#xA;&lt;a href=&#34;https://www.meetup.com/python-barcelona/events/282194482/&#34;&gt;meetup&lt;/a&gt;,&#xA;&lt;a href=&#34;https://ber2.github.io/slides/2021-11-25-pybcn-pbt/slides.html&#34;&gt;slides&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h4 id=&#34;counting-votes-analyzing-a-large-dataset-with-dask&#34;&gt;Counting votes: analyzing a large dataset with Dask&lt;/h4&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Date&lt;/strong&gt;: December 12th, 2020&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Place&lt;/strong&gt;: PyDay 2020, online event&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Links&lt;/strong&gt;: &lt;a href=&#34;https://pybcn.org/events/pyday_bcn/pyday_bcn_2020/&#34;&gt;website&lt;/a&gt;,&#xA;&lt;a href=&#34;https://www.beautiful.ai/player/-NRkw9y2c_cRm8p1zOu_&#34;&gt;slides&lt;/a&gt;,&#xA;&lt;a href=&#34;https://www.youtube.com/watch?v=KOpW86J56CU&#34;&gt;youtube&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h4 id=&#34;building-a-validation-scheme-for-a-rest-api-using-voluptuous&#34;&gt;Building a validation scheme for a REST API using Voluptuous&lt;/h4&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Date&lt;/strong&gt;: April 25th, 2019&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Place&lt;/strong&gt;: PyBcn Meetup, held at the TravelPerk offices&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Links&lt;/strong&gt;: &lt;a href=&#34;https://www.beautiful.ai/player/-NRkw9y2c_cRm8p1zOu_&#34;&gt;meetup&lt;/a&gt;,&#xA;&lt;a href=&#34;https://www.beautiful.ai/player/-NRkxXPRZTWP4JcPvWF4&#34;&gt;slides&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title>Getting PyMC3 to work</title>
       <link>https://ber2.github.io/posts/pymc/</link>
       <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://ber2.github.io/posts/pymc/</guid>
-      <description>In the last few days, I have been diving into Cameron Davidson-Pilon&amp;rsquo;s book Bayesian Methods for Hackers, available here.
-The book is an excellent, practical introduction to probabilistic programming and, more precisely, to the usage of Markov Chain Monte Carlo, purely in Python and using PyMC.
-The printed version of the book was published a while ago and uses the PyMC library over Python 2.7. Since then, the ecosystem has changed a bit, with the publication of PyMC3, which updates the library to Python 3.</description>
+      <description>&lt;p&gt;In the last few days, I have been diving into Cameron Davidson-Pilon&amp;rsquo;s book &lt;em&gt;Bayesian Methods for Hackers&lt;/em&gt;, available &lt;a href=&#34;https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;The book is an excellent, practical introduction to probabilistic programming and, more precisely, to the usage of &lt;strong&gt;Markov Chain Monte Carlo&lt;/strong&gt;, purely in Python and using &lt;a href=&#34;https://github.com/pymc-devs/pymc3&#34;&gt;PyMC&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;The printed version of the book was published a while ago and uses the PyMC library over Python 2.7.&#xA;Since then, the ecosystem has changed a bit, with the publication of &lt;strong&gt;PyMC3&lt;/strong&gt;, which updates the library to Python 3.&#xA;Although the Jupyter notebooks from the book have been updated to this context (see &lt;a href=&#34;https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers#pymc3&#34;&gt;here&lt;/a&gt;), there have been further updates that require extra work.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Hashing documents during the Cookiepocalypse</title>
       <link>https://ber2.github.io/posts/simhash/</link>
       <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://ber2.github.io/posts/simhash/</guid>
-      <description>The FLoC proposal As part of their phasing-out of third party cookies and rolling out of the Privacy Sandbox, Google have announced their intentions to replace third party cookies in Chrome. The strategy is to replace each of the functions served by third party cookies in web advertising, one by one, by individual devices that preserve user privacy.
-Federated Learning of Cohorts (FLoC) is the replacement for cross-site user tracking on Google Chrome.</description>
+      <description>&lt;h2 id=&#34;the-floc-proposal&#34;&gt;The FLoC proposal&lt;/h2&gt;&#xA;&lt;p&gt;As part of their phasing-out of third party cookies and rolling out of the &lt;a href=&#34;https://blog.google/products/ads-commerce/2021-01-privacy-sandbox/&#34;&gt;Privacy Sandbox&lt;/a&gt;, Google have announced their intentions to replace third party cookies in Chrome.&#xA;The strategy is to replace each of the functions served by third party cookies in web advertising, one by one, by individual devices that preserve user privacy.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/WICG/floc&#34;&gt;Federated Learning of Cohorts&lt;/a&gt; (&lt;strong&gt;FLoC&lt;/strong&gt;) is the replacement for cross-site user tracking on Google Chrome.&#xA;In order to enable targeting based on browsing interests without cookie identifiers, the user&amp;rsquo;s browser computes a &lt;strong&gt;cohort identifier&lt;/strong&gt;, that is: a hash of the browsing history.&lt;/p&gt;</description>
     </item>
-    
-    <item>
-      <title>New Look</title>
-      <link>https://ber2.github.io/posts/new-look/</link>
-      <pubDate>Sat, 23 Jan 2021 18:28:22 +0100</pubDate>
-      
-      <guid>https://ber2.github.io/posts/new-look/</guid>
-      <description>As part of an ongoing experiment, I have stopped using jekyll and replaced it by hugo as build tool for this website.
-I have also taken the chance to go for a dark theme called m10c, because I find dark themes easier on the eyes.</description>
-    </item>
-    
-    <item>
-      <title>Alberto Cámara</title>
-      <link>https://ber2.github.io/about/</link>
-      <pubDate>Sat, 23 Jan 2021 17:44:33 +0100</pubDate>
-      
-      <guid>https://ber2.github.io/about/</guid>
-      <description>I come from Montserrat.
-I am a Maths PhD currently based in the Barcelona area.
-I work as a Data Scientist at Hybrid Theory.
-I have a wide range of technical interests:
- Data Science, Engineering and Analysis Functional Programming Parallel Computation Deep Learning Natural Language Processing Bayesian Inference Automating boring stuff Test-Driven Development  Most of the time I code in Python, Scala and SQL.
-When I am not in front of a screen I try to get to the mountains.</description>
-    </item>
-    
     <item>
       <title>BCN PyDay 2020 Counting votes with Dask</title>
       <link>https://ber2.github.io/posts/pyday-talk/</link>
       <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://ber2.github.io/posts/pyday-talk/</guid>
-      <description>I have given a talk at the Barcelona PyDay 2020, which is taking place as an online event on December 12th, 2020.
-The title of the talk is Counting votes: analyzing a large dataset with Dask.
-The purpose of the talk is to exhibit a use case in which Dask excels, in my opinion: working with datasets which do not fit into single machine memory but still are reasonably small not to require going to a cluster.</description>
+      <description>&lt;p&gt;I have given a talk at the &lt;a href=&#34;https://pybcn.org/events/pyday_bcn/pyday_bcn_2020/&#34;&gt;Barcelona PyDay 2020&lt;/a&gt;, which is taking place as an online event on&#xA;December 12th, 2020.&lt;/p&gt;&#xA;&lt;p&gt;The title of the talk is &lt;strong&gt;Counting votes: analyzing a large dataset with Dask&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;The purpose of the&#xA;talk is to exhibit a use case in which &lt;a href=&#34;https://dask.org/&#34;&gt;Dask&lt;/a&gt; excels, in my opinion: working with&#xA;datasets which do not fit into single machine memory but still are reasonably small not to require&#xA;going to a cluster.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Testing asyncio code on Python 3.9</title>
       <link>https://ber2.github.io/posts/asyncio-testing/</link>
       <pubDate>Sun, 01 Nov 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://ber2.github.io/posts/asyncio-testing/</guid>
-      <description>A few notes on how to unit test Python asyncio code. Accompanying code available here.
-Python&amp;rsquo;s asyncio library Starting from Python 3.7, and having received a lot of attention in subsequent releases, the asyncio library provides a basis for comfortably writing concurrent code.
-This is a good idea when you are given a task which is not CPU intensive, such that your program will spend most of the time idly waiting for responses from other components.</description>
+      <description>&lt;p&gt;A few notes on how to unit test Python asyncio code.&#xA;Accompanying code available &lt;a href=&#34;https://github.com/ber2/basic-asyncio-example&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;pythons-asyncio-library&#34;&gt;Python&amp;rsquo;s asyncio library&lt;/h2&gt;&#xA;&lt;p&gt;Starting from Python 3.7, and having received a lot of attention in subsequent releases, the&#xA;&lt;a href=&#34;https://docs.python.org/3/library/asyncio.html&#34;&gt;asyncio&lt;/a&gt; library provides a basis for comfortably&#xA;writing concurrent code.&lt;/p&gt;&#xA;&lt;p&gt;This is a good idea when you are given a task which is not CPU intensive, such that your program&#xA;will spend most of the time idly waiting for responses from other components. I/O bound tasks are&#xA;the typical example: when extracting data from a REST API, you are bound to spend most time sitting&#xA;on an idle CPU while waiting for HTTP responses.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Hourly Register</title>
       <link>https://ber2.github.io/posts/hourly-register/</link>
       <pubDate>Sat, 26 Sep 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://ber2.github.io/posts/hourly-register/</guid>
-      <description>Everybody fill up forms! The hourly register form is a document which will be familiar to paid company workers in Spain.
-Introduced by law a couple of years ago, it makes everyone register at which time they start and stop working every day. A report is filled at the end of each month, signed and archived, and never to be seen again unless the company suffers an inspection or a legal problem arises.</description>
+      <description>&lt;h2 id=&#34;everybody-fill-up-forms&#34;&gt;Everybody fill up forms!&lt;/h2&gt;&#xA;&lt;p&gt;The &lt;strong&gt;hourly register form&lt;/strong&gt; is a document which will be familiar to paid company workers in Spain.&lt;/p&gt;&#xA;&lt;p&gt;Introduced by law a couple of years ago, it makes everyone register at which time they start and&#xA;stop working every day. A report is filled at the end of each month, signed and archived, and never&#xA;to be seen again unless the company suffers an inspection or a legal problem arises.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>On data classes in Python 3.8 and 3.9</title>
       <link>https://ber2.github.io/posts/dataclasses/</link>
       <pubDate>Thu, 24 Sep 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://ber2.github.io/posts/dataclasses/</guid>
-      <description>In this post I gather a few comments and give some examples on the usage of data classes in Python.
-Data classes Data classes were introduced in Python 3.7. We could summarize them as a convenient way to represent data, since classes decorated with @dataclass will supply methods such as __init__() or __repr__() without having to define them.
-Parameter types are indicated using type annotations, so a data class declaration will look like this:</description>
+      <description>&lt;p&gt;In this post I gather a few comments and give some examples on the usage of &lt;strong&gt;data classes in Python&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;data-classes&#34;&gt;Data classes&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://docs.python.org/3/library/dataclasses.html&#34;&gt;Data classes&lt;/a&gt; were introduced in Python 3.7.&#xA;We could summarize them as a convenient way to represent data, since classes decorated with&#xA;&lt;code&gt;@dataclass&lt;/code&gt; will supply methods such as &lt;code&gt;__init__()&lt;/code&gt; or &lt;code&gt;__repr__()&lt;/code&gt; without having to define them.&lt;/p&gt;&#xA;&lt;p&gt;Parameter types are indicated using type annotations, so a data class declaration will look like&#xA;this:&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,85 +1,54 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Data Ramblings</title>
+    <title>Posts on Alberto Cámara</title>
     <link>https://ber2.github.io/posts/</link>
-    <description>Recent content in Posts on Data Ramblings</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Posts on Alberto Cámara</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 21 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ber2.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://ber2.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Getting PyMC3 to work</title>
       <link>https://ber2.github.io/posts/pymc/</link>
       <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://ber2.github.io/posts/pymc/</guid>
-      <description>In the last few days, I have been diving into Cameron Davidson-Pilon&amp;rsquo;s book Bayesian Methods for Hackers, available here.
-The book is an excellent, practical introduction to probabilistic programming and, more precisely, to the usage of Markov Chain Monte Carlo, purely in Python and using PyMC.
-The printed version of the book was published a while ago and uses the PyMC library over Python 2.7. Since then, the ecosystem has changed a bit, with the publication of PyMC3, which updates the library to Python 3.</description>
+      <description>&lt;p&gt;In the last few days, I have been diving into Cameron Davidson-Pilon&amp;rsquo;s book &lt;em&gt;Bayesian Methods for Hackers&lt;/em&gt;, available &lt;a href=&#34;https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;The book is an excellent, practical introduction to probabilistic programming and, more precisely, to the usage of &lt;strong&gt;Markov Chain Monte Carlo&lt;/strong&gt;, purely in Python and using &lt;a href=&#34;https://github.com/pymc-devs/pymc3&#34;&gt;PyMC&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;The printed version of the book was published a while ago and uses the PyMC library over Python 2.7.&#xA;Since then, the ecosystem has changed a bit, with the publication of &lt;strong&gt;PyMC3&lt;/strong&gt;, which updates the library to Python 3.&#xA;Although the Jupyter notebooks from the book have been updated to this context (see &lt;a href=&#34;https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers#pymc3&#34;&gt;here&lt;/a&gt;), there have been further updates that require extra work.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Hashing documents during the Cookiepocalypse</title>
       <link>https://ber2.github.io/posts/simhash/</link>
       <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://ber2.github.io/posts/simhash/</guid>
-      <description>The FLoC proposal As part of their phasing-out of third party cookies and rolling out of the Privacy Sandbox, Google have announced their intentions to replace third party cookies in Chrome. The strategy is to replace each of the functions served by third party cookies in web advertising, one by one, by individual devices that preserve user privacy.
-Federated Learning of Cohorts (FLoC) is the replacement for cross-site user tracking on Google Chrome.</description>
+      <description>&lt;h2 id=&#34;the-floc-proposal&#34;&gt;The FLoC proposal&lt;/h2&gt;&#xA;&lt;p&gt;As part of their phasing-out of third party cookies and rolling out of the &lt;a href=&#34;https://blog.google/products/ads-commerce/2021-01-privacy-sandbox/&#34;&gt;Privacy Sandbox&lt;/a&gt;, Google have announced their intentions to replace third party cookies in Chrome.&#xA;The strategy is to replace each of the functions served by third party cookies in web advertising, one by one, by individual devices that preserve user privacy.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/WICG/floc&#34;&gt;Federated Learning of Cohorts&lt;/a&gt; (&lt;strong&gt;FLoC&lt;/strong&gt;) is the replacement for cross-site user tracking on Google Chrome.&#xA;In order to enable targeting based on browsing interests without cookie identifiers, the user&amp;rsquo;s browser computes a &lt;strong&gt;cohort identifier&lt;/strong&gt;, that is: a hash of the browsing history.&lt;/p&gt;</description>
     </item>
-    
-    <item>
-      <title>New Look</title>
-      <link>https://ber2.github.io/posts/new-look/</link>
-      <pubDate>Sat, 23 Jan 2021 18:28:22 +0100</pubDate>
-      
-      <guid>https://ber2.github.io/posts/new-look/</guid>
-      <description>As part of an ongoing experiment, I have stopped using jekyll and replaced it by hugo as build tool for this website.
-I have also taken the chance to go for a dark theme called m10c, because I find dark themes easier on the eyes.</description>
-    </item>
-    
     <item>
       <title>BCN PyDay 2020 Counting votes with Dask</title>
       <link>https://ber2.github.io/posts/pyday-talk/</link>
       <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://ber2.github.io/posts/pyday-talk/</guid>
-      <description>I have given a talk at the Barcelona PyDay 2020, which is taking place as an online event on December 12th, 2020.
-The title of the talk is Counting votes: analyzing a large dataset with Dask.
-The purpose of the talk is to exhibit a use case in which Dask excels, in my opinion: working with datasets which do not fit into single machine memory but still are reasonably small not to require going to a cluster.</description>
+      <description>&lt;p&gt;I have given a talk at the &lt;a href=&#34;https://pybcn.org/events/pyday_bcn/pyday_bcn_2020/&#34;&gt;Barcelona PyDay 2020&lt;/a&gt;, which is taking place as an online event on&#xA;December 12th, 2020.&lt;/p&gt;&#xA;&lt;p&gt;The title of the talk is &lt;strong&gt;Counting votes: analyzing a large dataset with Dask&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;The purpose of the&#xA;talk is to exhibit a use case in which &lt;a href=&#34;https://dask.org/&#34;&gt;Dask&lt;/a&gt; excels, in my opinion: working with&#xA;datasets which do not fit into single machine memory but still are reasonably small not to require&#xA;going to a cluster.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Testing asyncio code on Python 3.9</title>
       <link>https://ber2.github.io/posts/asyncio-testing/</link>
       <pubDate>Sun, 01 Nov 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://ber2.github.io/posts/asyncio-testing/</guid>
-      <description>A few notes on how to unit test Python asyncio code. Accompanying code available here.
-Python&amp;rsquo;s asyncio library Starting from Python 3.7, and having received a lot of attention in subsequent releases, the asyncio library provides a basis for comfortably writing concurrent code.
-This is a good idea when you are given a task which is not CPU intensive, such that your program will spend most of the time idly waiting for responses from other components.</description>
+      <description>&lt;p&gt;A few notes on how to unit test Python asyncio code.&#xA;Accompanying code available &lt;a href=&#34;https://github.com/ber2/basic-asyncio-example&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;pythons-asyncio-library&#34;&gt;Python&amp;rsquo;s asyncio library&lt;/h2&gt;&#xA;&lt;p&gt;Starting from Python 3.7, and having received a lot of attention in subsequent releases, the&#xA;&lt;a href=&#34;https://docs.python.org/3/library/asyncio.html&#34;&gt;asyncio&lt;/a&gt; library provides a basis for comfortably&#xA;writing concurrent code.&lt;/p&gt;&#xA;&lt;p&gt;This is a good idea when you are given a task which is not CPU intensive, such that your program&#xA;will spend most of the time idly waiting for responses from other components. I/O bound tasks are&#xA;the typical example: when extracting data from a REST API, you are bound to spend most time sitting&#xA;on an idle CPU while waiting for HTTP responses.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Hourly Register</title>
       <link>https://ber2.github.io/posts/hourly-register/</link>
       <pubDate>Sat, 26 Sep 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://ber2.github.io/posts/hourly-register/</guid>
-      <description>Everybody fill up forms! The hourly register form is a document which will be familiar to paid company workers in Spain.
-Introduced by law a couple of years ago, it makes everyone register at which time they start and stop working every day. A report is filled at the end of each month, signed and archived, and never to be seen again unless the company suffers an inspection or a legal problem arises.</description>
+      <description>&lt;h2 id=&#34;everybody-fill-up-forms&#34;&gt;Everybody fill up forms!&lt;/h2&gt;&#xA;&lt;p&gt;The &lt;strong&gt;hourly register form&lt;/strong&gt; is a document which will be familiar to paid company workers in Spain.&lt;/p&gt;&#xA;&lt;p&gt;Introduced by law a couple of years ago, it makes everyone register at which time they start and&#xA;stop working every day. A report is filled at the end of each month, signed and archived, and never&#xA;to be seen again unless the company suffers an inspection or a legal problem arises.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>On data classes in Python 3.8 and 3.9</title>
       <link>https://ber2.github.io/posts/dataclasses/</link>
       <pubDate>Thu, 24 Sep 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://ber2.github.io/posts/dataclasses/</guid>
-      <description>In this post I gather a few comments and give some examples on the usage of data classes in Python.
-Data classes Data classes were introduced in Python 3.7. We could summarize them as a convenient way to represent data, since classes decorated with @dataclass will supply methods such as __init__() or __repr__() without having to define them.
-Parameter types are indicated using type annotations, so a data class declaration will look like this:</description>
+      <description>&lt;p&gt;In this post I gather a few comments and give some examples on the usage of &lt;strong&gt;data classes in Python&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;data-classes&#34;&gt;Data classes&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://docs.python.org/3/library/dataclasses.html&#34;&gt;Data classes&lt;/a&gt; were introduced in Python 3.7.&#xA;We could summarize them as a convenient way to represent data, since classes decorated with&#xA;&lt;code&gt;@dataclass&lt;/code&gt; will supply methods such as &lt;code&gt;__init__()&lt;/code&gt; or &lt;code&gt;__repr__()&lt;/code&gt; without having to define them.&lt;/p&gt;&#xA;&lt;p&gt;Parameter types are indicated using type annotations, so a data class declaration will look like&#xA;this:&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

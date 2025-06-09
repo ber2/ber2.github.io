@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://ber2.github.io/</loc>
+    <lastmod>2025-06-07T11:11:56+02:00</lastmod>
+  </url><url>
+    <loc>https://ber2.github.io/cv/</loc>
+    <lastmod>2025-06-07T11:11:56+02:00</lastmod>
+  </url><url>
+    <loc>https://ber2.github.io/contact/</loc>
+    <lastmod>2025-06-07T11:09:45+02:00</lastmod>
+  </url><url>
     <loc>https://ber2.github.io/talks/</loc>
     <lastmod>2023-03-30T07:05:39+02:00</lastmod>
   </url><url>
@@ -12,9 +21,6 @@
     <lastmod>2021-03-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ber2.github.io/tags/bayesian/</loc>
-    <lastmod>2021-03-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ber2.github.io/</loc>
     <lastmod>2021-03-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ber2.github.io/posts/pymc/</loc>
@@ -38,23 +44,20 @@
     <loc>https://ber2.github.io/tags/theano/</loc>
     <lastmod>2021-03-21T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://ber2.github.io/tags/hashing/</loc>
+    <lastmod>2021-03-10T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://ber2.github.io/posts/simhash/</loc>
     <lastmod>2021-03-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ber2.github.io/tags/dark-theme/</loc>
-    <lastmod>2021-01-23T18:28:22+01:00</lastmod>
+    <loc>https://ber2.github.io/tags/online-advertising/</loc>
+    <lastmod>2021-03-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ber2.github.io/tags/hugo/</loc>
-    <lastmod>2021-01-23T18:28:22+01:00</lastmod>
+    <loc>https://ber2.github.io/tags/simhash/</loc>
+    <lastmod>2021-03-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ber2.github.io/tags/jekyll/</loc>
-    <lastmod>2021-01-23T18:28:22+01:00</lastmod>
-  </url><url>
-    <loc>https://ber2.github.io/posts/new-look/</loc>
-    <lastmod>2021-01-23T18:28:22+01:00</lastmod>
-  </url><url>
-    <loc>https://ber2.github.io/about/</loc>
-    <lastmod>2021-01-23T17:44:33+01:00</lastmod>
+    <loc>https://ber2.github.io/tags/third-party-cookies/</loc>
+    <lastmod>2021-03-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ber2.github.io/posts/pyday-talk/</loc>
     <lastmod>2020-12-12T00:00:00+00:00</lastmod>
@@ -71,7 +74,10 @@
     <loc>https://ber2.github.io/tags/asyncio/</loc>
     <lastmod>2020-11-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ber2.github.io/tags/tdd-testing/</loc>
+    <loc>https://ber2.github.io/tags/test-driven-development/</loc>
+    <lastmod>2020-11-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ber2.github.io/tags/testing/</loc>
     <lastmod>2020-11-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ber2.github.io/posts/asyncio-testing/</loc>

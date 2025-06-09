@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>asyncio on Data Ramblings</title>
+    <title>Asyncio on Alberto Cámara</title>
     <link>https://ber2.github.io/tags/asyncio/</link>
-    <description>Recent content in asyncio on Data Ramblings</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Asyncio on Alberto Cámara</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 01 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://ber2.github.io/tags/asyncio/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 Nov 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://ber2.github.io/tags/asyncio/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Testing asyncio code on Python 3.9</title>
       <link>https://ber2.github.io/posts/asyncio-testing/</link>
       <pubDate>Sun, 01 Nov 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://ber2.github.io/posts/asyncio-testing/</guid>
-      <description>A few notes on how to unit test Python asyncio code. Accompanying code available here.
-Python&amp;rsquo;s asyncio library Starting from Python 3.7, and having received a lot of attention in subsequent releases, the asyncio library provides a basis for comfortably writing concurrent code.
-This is a good idea when you are given a task which is not CPU intensive, such that your program will spend most of the time idly waiting for responses from other components.</description>
+      <description>&lt;p&gt;A few notes on how to unit test Python asyncio code.&#xA;Accompanying code available &lt;a href=&#34;https://github.com/ber2/basic-asyncio-example&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;pythons-asyncio-library&#34;&gt;Python&amp;rsquo;s asyncio library&lt;/h2&gt;&#xA;&lt;p&gt;Starting from Python 3.7, and having received a lot of attention in subsequent releases, the&#xA;&lt;a href=&#34;https://docs.python.org/3/library/asyncio.html&#34;&gt;asyncio&lt;/a&gt; library provides a basis for comfortably&#xA;writing concurrent code.&lt;/p&gt;&#xA;&lt;p&gt;This is a good idea when you are given a task which is not CPU intensive, such that your program&#xA;will spend most of the time idly waiting for responses from other components. I/O bound tasks are&#xA;the typical example: when extracting data from a REST API, you are bound to spend most time sitting&#xA;on an idle CPU while waiting for HTTP responses.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>
