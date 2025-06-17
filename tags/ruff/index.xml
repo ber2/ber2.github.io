@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ruff on Alberto Cámara</title>
+    <link>http://localhost:1313/tags/ruff/</link>
+    <description>Recent content in Ruff on Alberto Cámara</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 14 Jun 2025 08:00:06 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/ruff/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Github Actions setup for Python projects in 2025</title>
+      <link>http://localhost:1313/posts/2025_github_actions_python/</link>
+      <pubDate>Sat, 14 Jun 2025 08:00:06 +0200</pubDate>
+      <guid>http://localhost:1313/posts/2025_github_actions_python/</guid>
+      <description>&lt;h2 id=&#34;tldr&#34;&gt;TL;DR&lt;/h2&gt;&#xA;&lt;p&gt;In this post I discuss my current choice of tools for setting up a Python project and running continuous integration via &lt;a href=&#34;https://github.com/features/actions&#34;&gt;Github Actions&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Although I am not affiliated with them, my choices revolve significantly around some of the recently introduced tools by &lt;a href=&#34;https://astral.sh&#34;&gt;Astral&lt;/a&gt;. Their common &lt;em&gt;leitmotiv&lt;/em&gt; is that, although designed for the Python ecosystem, the tools themselves are written in &lt;a href=&#34;https://www.rust-lang.org/&#34;&gt;Rust&lt;/a&gt;. This, along with some very nice design decisions (see &lt;a href=&#34;https://www.youtube.com/watch?v=gSKTfG1GXYQ&#34;&gt;this talk&lt;/a&gt; about &lt;code&gt;uv&lt;/code&gt;, for example), makes them very reliable and fast.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
