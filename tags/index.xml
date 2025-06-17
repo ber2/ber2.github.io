@@ -6,8 +6,64 @@
     <description>Recent content in Tags on Alberto Cámara</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 21 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 14 Jun 2025 08:00:06 +0200</lastBuildDate>
     <atom:link href="https://ber2.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bandit</title>
+      <link>https://ber2.github.io/tags/bandit/</link>
+      <pubDate>Sat, 14 Jun 2025 08:00:06 +0200</pubDate>
+      <guid>https://ber2.github.io/tags/bandit/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CI</title>
+      <link>https://ber2.github.io/tags/ci/</link>
+      <pubDate>Sat, 14 Jun 2025 08:00:06 +0200</pubDate>
+      <guid>https://ber2.github.io/tags/ci/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Github Actions</title>
+      <link>https://ber2.github.io/tags/github-actions/</link>
+      <pubDate>Sat, 14 Jun 2025 08:00:06 +0200</pubDate>
+      <guid>https://ber2.github.io/tags/github-actions/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Pytest</title>
+      <link>https://ber2.github.io/tags/pytest/</link>
+      <pubDate>Sat, 14 Jun 2025 08:00:06 +0200</pubDate>
+      <guid>https://ber2.github.io/tags/pytest/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>https://ber2.github.io/tags/python/</link>
+      <pubDate>Sat, 14 Jun 2025 08:00:06 +0200</pubDate>
+      <guid>https://ber2.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ruff</title>
+      <link>https://ber2.github.io/tags/ruff/</link>
+      <pubDate>Sat, 14 Jun 2025 08:00:06 +0200</pubDate>
+      <guid>https://ber2.github.io/tags/ruff/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Testing</title>
+      <link>https://ber2.github.io/tags/testing/</link>
+      <pubDate>Sat, 14 Jun 2025 08:00:06 +0200</pubDate>
+      <guid>https://ber2.github.io/tags/testing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Uv</title>
+      <link>https://ber2.github.io/tags/uv/</link>
+      <pubDate>Sat, 14 Jun 2025 08:00:06 +0200</pubDate>
+      <guid>https://ber2.github.io/tags/uv/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Anaconda</title>
       <link>https://ber2.github.io/tags/anaconda/</link>
@@ -100,13 +156,6 @@
       <description></description>
     </item>
     <item>
-      <title>Python</title>
-      <link>https://ber2.github.io/tags/python/</link>
-      <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
-      <guid>https://ber2.github.io/tags/python/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Asyncio</title>
       <link>https://ber2.github.io/tags/asyncio/</link>
       <pubDate>Sun, 01 Nov 2020 00:00:00 +0000</pubDate>
@@ -118,13 +167,6 @@
       <link>https://ber2.github.io/tags/test-driven-development/</link>
       <pubDate>Sun, 01 Nov 2020 00:00:00 +0000</pubDate>
       <guid>https://ber2.github.io/tags/test-driven-development/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Testing</title>
-      <link>https://ber2.github.io/tags/testing/</link>
-      <pubDate>Sun, 01 Nov 2020 00:00:00 +0000</pubDate>
-      <guid>https://ber2.github.io/tags/testing/</guid>
       <description></description>
     </item>
     <item>
