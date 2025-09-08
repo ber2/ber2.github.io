@@ -6,61 +6,96 @@
     <description>Recent content in Tags on Alberto Cámara</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 14 Jun 2025 08:00:06 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 08 Sep 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://ber2.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Csv</title>
+      <link>https://ber2.github.io/tags/csv/</link>
+      <pubDate>Mon, 08 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://ber2.github.io/tags/csv/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Etl</title>
+      <link>https://ber2.github.io/tags/etl/</link>
+      <pubDate>Mon, 08 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://ber2.github.io/tags/etl/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Github Actions</title>
+      <link>https://ber2.github.io/tags/github-actions/</link>
+      <pubDate>Mon, 08 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://ber2.github.io/tags/github-actions/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Pandas</title>
+      <link>https://ber2.github.io/tags/pandas/</link>
+      <pubDate>Mon, 08 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://ber2.github.io/tags/pandas/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>https://ber2.github.io/tags/python/</link>
+      <pubDate>Mon, 08 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://ber2.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sqlite</title>
+      <link>https://ber2.github.io/tags/sqlite/</link>
+      <pubDate>Mon, 08 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://ber2.github.io/tags/sqlite/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Weather</title>
+      <link>https://ber2.github.io/tags/weather/</link>
+      <pubDate>Mon, 08 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://ber2.github.io/tags/weather/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Bandit</title>
       <link>https://ber2.github.io/tags/bandit/</link>
-      <pubDate>Sat, 14 Jun 2025 08:00:06 +0200</pubDate>
+      <pubDate>Sat, 14 Jun 2025 00:00:00 +0000</pubDate>
       <guid>https://ber2.github.io/tags/bandit/</guid>
       <description></description>
     </item>
     <item>
       <title>CI</title>
       <link>https://ber2.github.io/tags/ci/</link>
-      <pubDate>Sat, 14 Jun 2025 08:00:06 +0200</pubDate>
+      <pubDate>Sat, 14 Jun 2025 00:00:00 +0000</pubDate>
       <guid>https://ber2.github.io/tags/ci/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Github Actions</title>
-      <link>https://ber2.github.io/tags/github-actions/</link>
-      <pubDate>Sat, 14 Jun 2025 08:00:06 +0200</pubDate>
-      <guid>https://ber2.github.io/tags/github-actions/</guid>
       <description></description>
     </item>
     <item>
       <title>Pytest</title>
       <link>https://ber2.github.io/tags/pytest/</link>
-      <pubDate>Sat, 14 Jun 2025 08:00:06 +0200</pubDate>
+      <pubDate>Sat, 14 Jun 2025 00:00:00 +0000</pubDate>
       <guid>https://ber2.github.io/tags/pytest/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Python</title>
-      <link>https://ber2.github.io/tags/python/</link>
-      <pubDate>Sat, 14 Jun 2025 08:00:06 +0200</pubDate>
-      <guid>https://ber2.github.io/tags/python/</guid>
       <description></description>
     </item>
     <item>
       <title>Ruff</title>
       <link>https://ber2.github.io/tags/ruff/</link>
-      <pubDate>Sat, 14 Jun 2025 08:00:06 +0200</pubDate>
+      <pubDate>Sat, 14 Jun 2025 00:00:00 +0000</pubDate>
       <guid>https://ber2.github.io/tags/ruff/</guid>
       <description></description>
     </item>
     <item>
       <title>Testing</title>
       <link>https://ber2.github.io/tags/testing/</link>
-      <pubDate>Sat, 14 Jun 2025 08:00:06 +0200</pubDate>
+      <pubDate>Sat, 14 Jun 2025 00:00:00 +0000</pubDate>
       <guid>https://ber2.github.io/tags/testing/</guid>
       <description></description>
     </item>
     <item>
       <title>Uv</title>
       <link>https://ber2.github.io/tags/uv/</link>
-      <pubDate>Sat, 14 Jun 2025 08:00:06 +0200</pubDate>
+      <pubDate>Sat, 14 Jun 2025 00:00:00 +0000</pubDate>
       <guid>https://ber2.github.io/tags/uv/</guid>
       <description></description>
     </item>

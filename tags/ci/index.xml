@@ -6,12 +6,12 @@
     <description>Recent content in CI on Alberto Cámara</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 14 Jun 2025 08:00:06 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 14 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://ber2.github.io/tags/ci/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A Github Actions setup for Python projects in 2025</title>
       <link>https://ber2.github.io/posts/2025_github_actions_python/</link>
-      <pubDate>Sat, 14 Jun 2025 08:00:06 +0200</pubDate>
+      <pubDate>Sat, 14 Jun 2025 00:00:00 +0000</pubDate>
       <guid>https://ber2.github.io/posts/2025_github_actions_python/</guid>
       <description>&lt;h2 id=&#34;tldr&#34;&gt;TL;DR&lt;/h2&gt;&#xA;&lt;p&gt;In this post I discuss my current choice of tools for setting up a Python project and running continuous integration via &lt;a href=&#34;https://github.com/features/actions&#34;&gt;Github Actions&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;In line with recent fashion, my choices revolve significantly around some of the recently introduced tools by &lt;a href=&#34;https://astral.sh&#34;&gt;Astral&lt;/a&gt;. Their common &lt;em&gt;leitmotiv&lt;/em&gt; is that, although designed for the Python ecosystem, the tools themselves are written in &lt;a href=&#34;https://www.rust-lang.org/&#34;&gt;Rust&lt;/a&gt;. This, along with some very nice design decisions (see &lt;a href=&#34;https://www.youtube.com/watch?v=gSKTfG1GXYQ&#34;&gt;this talk&lt;/a&gt; about &lt;code&gt;uv&lt;/code&gt;, for example), makes them very reliable and fast.&lt;/p&gt;</description>
     </item>

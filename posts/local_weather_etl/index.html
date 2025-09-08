@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Building a very small ETL for local weather data // Alberto Cámara</title>
+    <link rel="shortcut icon" href="/images/pingu.jpg" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.147.9">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Alberto Cámara" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.5b1fcc8902588589c4767187402a3c29f8b8d7a6fdef6d9f8f77045bb0d14fee.css" />
+    
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Building a very small ETL for local weather data">
+  <meta name="twitter:description" content="Having fun with weather data Weather data is one of the most interesting data sources that are available to a Data Scientist.
+One of the first ETLs that I ever coded when starting to work as a Data Scientist was a daily extraction of current and predicted weather data. This data would later be processed into features for a model predicting brick-and-mortar shop sales.
+Weather data is easily available. If you are based in Catalonia, for example, meteo.cat is the Catalan government agency and has a very good REST API plus a very nice network of weather stations. The equivalent for the Spanish government is AEMET, also with an open REST API.">
+
+    <meta property="og:url" content="https://ber2.github.io/posts/local_weather_etl/">
+  <meta property="og:site_name" content="Alberto Cámara">
+  <meta property="og:title" content="Building a very small ETL for local weather data">
+  <meta property="og:description" content="Having fun with weather data Weather data is one of the most interesting data sources that are available to a Data Scientist.
+One of the first ETLs that I ever coded when starting to work as a Data Scientist was a daily extraction of current and predicted weather data. This data would later be processed into features for a model predicting brick-and-mortar shop sales.
+Weather data is easily available. If you are based in Catalonia, for example, meteo.cat is the Catalan government agency and has a very good REST API plus a very nice network of weather stations. The equivalent for the Spanish government is AEMET, also with an open REST API.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-09-08T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-09-08T00:00:00+00:00">
+    <meta property="article:tag" content="Python">
+    <meta property="article:tag" content="Weather">
+    <meta property="article:tag" content="Etl">
+    <meta property="article:tag" content="Pandas">
+    <meta property="article:tag" content="Csv">
+    <meta property="article:tag" content="Sqlite">
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="/"><img class="app-header-avatar" src="/images/pic.jpeg" alt="Alberto Cámara" /></a>
+      <span class="app-header-title">Alberto Cámara</span>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/">Home</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/cv">CV</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/posts">Posts</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/talks">Talks</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/contact">Contact</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/tags">Tags</a>
+      </nav>
+      <p>Freelance Data Scientist</p>
+      <div class="app-header-social">
+        
+          <a href="https://github.com/ber2" target="_blank" rel="noreferrer noopener me">
+            <svg class="icon icon-brand-github" viewBox="0 0 24 24" fill="currentColor"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </a>
+        
+          <a href="https://www.linkedin.com/in/alberto-camara/" target="_blank" rel="noreferrer noopener me">
+            <svg class="icon icon-brand-linkedin" viewBox="0 0 24 24" fill="currentColor"><title>LinkedIn</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Building a very small ETL for local weather data</h1>
+      <div class="post-meta">
+        <div>
+          <svg class="icon icon-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>calendar</title><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          Sep 8, 2025
+        </div>
+        <div>
+          <svg class="icon icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>clock</title><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          8 min read
+        </div>
+        <div>
+          <svg class="icon icon-tag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>tag</title><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+              <a class="tag" href="/tags/python/">Python</a>
+              <a class="tag" href="/tags/weather/">Weather</a>
+              <a class="tag" href="/tags/etl/">Etl</a>
+              <a class="tag" href="/tags/pandas/">Pandas</a>
+              <a class="tag" href="/tags/csv/">Csv</a>
+              <a class="tag" href="/tags/sqlite/">Sqlite</a>
+              <a class="tag" href="/tags/github-actions/">Github Actions</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h2 id="having-fun-with-weather-data">Having fun with weather data</h2>
+<p>Weather data is one of the most interesting data sources that are available to a Data Scientist.</p>
+<p>One of the first ETLs that I ever coded when starting to work as a Data Scientist was a daily extraction of current and predicted weather data. This data would later be processed into features for a model predicting brick-and-mortar shop sales.</p>
+<p>Weather data is easily available. If you are based in Catalonia, for example, <a href="https://meteo.cat/">meteo.cat</a> is the Catalan government agency and has a very good <a href="https://apidocs.meteocat.gencat.cat/">REST API</a> plus a very nice network of <a href="https://meteo.cat/wpweb/observacions/">weather stations</a>. The equivalent for the Spanish government is <a href="https://www.aemet.es/ca/portada">AEMET</a>, also with an open <a href="https://opendata.aemet.es/centrodedescargas/inicio">REST API</a>.</p>
+<p>Other countries also have their own agencies, such as the <a href="https://www.metoffice.gov.uk/">Met Office</a> for the UK or <a href="https://meteofrance.com/">Météo France</a>. Finally, when in need for worldwide data, <a href="https://openweathermap.org/">OpenWeather</a> also offers an <a href="https://openweathermap.org/api">API</a> which is a great choice.</p>
+<p>All of the above either offer free access in exchange for fair use, sometimes preceded by registration, or a pricing model for data integration into commercial applications.</p>
+<h2 id="how-much-water-in-your-pluviometer">How much water in your pluviometer?</h2>
+<p>There are two limitations that appear soon after you start working with weather data:</p>
+<ul>
+<li>Historic data going back several years is usually not available.</li>
+<li>Observations are drawn from a network of stations that are often quite apart from each other.</li>
+</ul>
+<p>On one hand, historic data is important as <strong>training data</strong>.</p>
+<p>On the other hand, proximity to the weather station is not important for many applications. For example, temperature and atmospheric pressure tend to be quite stable on a given geographic area. Rainfall is otherwise incredibly volatile, at least in the corner of the Mediterranean where I live. It could be pouring down at home while the vegetable plot, a couple of kilometers away, stays absolutely dry.</p>
+<p>Taking rainfall into account is critical for making agricultural decisions. Of course, we need to know rainfall prior to deciding how much water needs to be supplied to each crop. More subtly, rainfall is related to the growth of common plagues, so tracking it is important in terms of deciding when to apply treatments.</p>
+<p>For lack of a better option, after a rainy day, it is very common to run to the pluviometer in the garden, plot or vineyard in order to find out how much rain we had last night, and the amount will be brought up in conversation, often noting the differences between close locations.</p>
+<p>Being passionate about data and having an itch to automate things, it was only a matter of time before I started to look for close stations to track local conditions.</p>
+<p>That&rsquo;s how I came across <a href="http://www.meteobeguda.cat/">meteobeguda.cat</a>, a website exposing data from a privately owned weather station located in La Beguda Alta, only 3 kilometers away from home. After seeing that current data is downloadable as a text file from the website and obtaining permission from the owner, I set out to code a <a href="https://github.com/ber2/meteobeguda-etl/">small ETL</a> as a means to have both a backup of historic weather data and a means to easily access data for my own tasks.</p>
+<h2 id="designing-a-very-small-etl">Designing a <em>very small</em> ETL</h2>
+<p>A single weather station will typically register a single data point with instrument measures each 15 minutes. This adds up to 96 daily data points. By current standards, this is <em>very small data</em>. Therefore, there is no need for powerful cloud computing, big data warehouses and spreading workloads across large clusters.</p>
+<p>For this reason, I went for the <em>cheap</em> options on the menu for building an ETL:</p>
+<ul>
+<li>
+<p>A python script without any parallelization, using <a href="https://requests.readthedocs.io/en/latest/">requests</a> to fetch and <a href="https://pandas.pydata.org/">pandas</a> to process new data. While I ensured that the job would be <a href="https://en.wikipedia.org/wiki/Idempotence">idempotent</a>, I added very limited support for lost run recovery.</p>
+</li>
+<li>
+<p>Storing extracted data in three formats by committing files to the same repository:</p>
+<ul>
+<li>
+<p><strong>Raw</strong>: a copy of the original text file without any changes. Mostly for reproducibility purposes.</p>
+</li>
+<li>
+<p><strong>Parsed</strong>: the data for a given date, processed into an individual <a href="https://en.wikipedia.org/wiki/Comma-separated_values">CSV</a> file per date. For this type of data, I would normally have a strong preference for the <a href="https://en.wikipedia.org/wiki/Apache_Parquet">Apache Parquet</a> format, which has many advantages. However, CSV is a text-based future-proof format. In other words: in 30 years time, I am a bit more certain about our ability to read CSV than Parquet.</p>
+</li>
+<li>
+<p><strong>Processed</strong>: a <a href="https://sqlite.org/">SQLite</a> database saved to a file, having a raw data table with individual data points each 15min from 2020 onwards, plus hourly, daily and monthly aggregated views. This is the format that enables easy and quick access to clean data via SQL queries. <a href="https://duckdb.org/">DuckDB</a> would have been an excellent alternative at the cost of adding an extra dependency to the project; the <a href="https://en.wikipedia.org/wiki/KISS_principle">KISS</a> principle dictated that SQLite was the better choice.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Batch execution via Github Action. In other words, for such a small workload, the Github Actions runners provide free CPU time in an amount which is sufficient to allow not to pay for a CPU elsewhere.</p>
+</li>
+</ul>
+<p>I also committed historic data to the repository, for example as several small SQLite <a href="https://github.com/ber2/meteobeguda-etl/tree/main/data/warehouse">files</a>.</p>
+<h3 id="the-data-parser">The data parser</h3>
+<p>All of the code is as simple as possible and fits expectations with the exception of the data parser, which is perhaps the only part deserving a bit of explanation.</p>
+<p>The beginning of a raw data file looks like this.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>                 Temp.  Temp.  Temp.  Hum.   Punt   Vel.   Dir.   Rec.  Vel.  Dir.  Sens.   Índ.   Índ.                  Int. Graus D.Graus D.  Temp.  Hum. Rosada  In.Cal.  EMC     Dens.    Mostr   Tx   Recep.  Int.
+</span></span><span style="display:flex;"><span>  Data    Hora    Ext.   Màx.   Mín.  Ext. Rosada   Vent   Vent   Vent  Màx.  Màx.  Tèrm.  Calor   THW    Bar    Pluja   Pluja  Calor    Fred    Int.  Int.   Int.   Int.    Int.  Int.Aire    Vent   Vent   ISS   Arc.
+</span></span><span style="display:flex;"><span>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+</span></span><span style="display:flex;"><span>24/06/25   0:15   23.6   23.7   23.4    60   15.3    1.6    OSO   0.40   4.8     O   23.6   24.0   24.0  1016.1   0.00    0.0    0.000   0.054   28.9    47   16.5   29.7    8.57   1.1507     348     1    100.0   15 
+</span></span><span style="display:flex;"><span>24/06/25   0:30   23.7   23.8   23.7    60   15.5    1.6    OSO   0.40   4.8     O   23.7   24.2   24.2  1016.0   0.00    0.0    0.000   0.056   28.9    47   16.4   29.7    8.57   1.1509     352     1    100.0   15 
+</span></span><span style="display:flex;"><span>24/06/25   0:45   23.6   23.7   23.4    61   15.6    1.6     NO   0.40   4.8    NO   23.6   24.1   24.1  1016.1   0.00    0.0    0.000   0.055   28.8    47   16.4   29.6    8.57   1.1513     351     1    100.0   15
+</span></span></code></pre></div><p>By squinting your eyes, after discarding the initial rows and assuming that column order will be preserved, this raw file looks like something that could be fed into a CSV parser. By exploiting the many parameter options in <a href="https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html"><code>pandas.read_csv</code></a> while insisting on being harsh about column data types, indeed, it is possible:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> io <span style="color:#f92672">import</span> BytesIO
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>COLUMNS <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;date&#34;</span>: np<span style="color:#f92672">.</span>dtype(<span style="color:#e6db74">&#34;O&#34;</span>),
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;time&#34;</span>: np<span style="color:#f92672">.</span>dtype(<span style="color:#e6db74">&#34;O&#34;</span>),
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;temperature&#34;</span>: pd<span style="color:#f92672">.</span>Float64Dtype(),
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;temperature_max&#34;</span>: pd<span style="color:#f92672">.</span>Float64Dtype(),
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;temperature_min&#34;</span>: pd<span style="color:#f92672">.</span>Float64Dtype(),
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;humidity&#34;</span>: pd<span style="color:#f92672">.</span>Int64Dtype(),
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;dew&#34;</span>: pd<span style="color:#f92672">.</span>Float64Dtype(),
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;windspeed&#34;</span>: pd<span style="color:#f92672">.</span>Float64Dtype(),
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;wind_direction&#34;</span>: pd<span style="color:#f92672">.</span>StringDtype(),
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;wind_rec&#34;</span>: pd<span style="color:#f92672">.</span>Float64Dtype(),
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;windspeed_max&#34;</span>: pd<span style="color:#f92672">.</span>Float64Dtype(),
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;windspeed_max_direction&#34;</span>: pd<span style="color:#f92672">.</span>StringDtype(),
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;temperature_feeling&#34;</span>: pd<span style="color:#f92672">.</span>Float64Dtype(),
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;heat_index&#34;</span>: pd<span style="color:#f92672">.</span>Float64Dtype(),
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;thw_index&#34;</span>: pd<span style="color:#f92672">.</span>Float64Dtype(),
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;pressure&#34;</span>: pd<span style="color:#f92672">.</span>Float64Dtype(),
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;rain&#34;</span>: pd<span style="color:#f92672">.</span>Float64Dtype(),
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;rain_intensity&#34;</span>: pd<span style="color:#f92672">.</span>Float64Dtype(),
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;heat_degrees&#34;</span>: pd<span style="color:#f92672">.</span>Float64Dtype(),
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;cold_degrees&#34;</span>: pd<span style="color:#f92672">.</span>Float64Dtype(),
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;temperature_interior&#34;</span>: pd<span style="color:#f92672">.</span>Float64Dtype(),
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;humidity_interior&#34;</span>: pd<span style="color:#f92672">.</span>Int64Dtype(),
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;dew_interior&#34;</span>: pd<span style="color:#f92672">.</span>Float64Dtype(),
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;heat_index_interior&#34;</span>: pd<span style="color:#f92672">.</span>Float64Dtype(),
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;air_density_interior&#34;</span>: pd<span style="color:#f92672">.</span>Float64Dtype(),
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;wind_direction_degrees&#34;</span>: pd<span style="color:#f92672">.</span>Float64Dtype(),
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;tx_wind&#34;</span>: pd<span style="color:#f92672">.</span>Int64Dtype(),
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;iss_reception&#34;</span>: pd<span style="color:#f92672">.</span>Int64Dtype(),
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;arc_interior&#34;</span>: pd<span style="color:#f92672">.</span>Float64Dtype(),
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">load_bytes</span>(raw: bytes) <span style="color:#f92672">-&gt;</span> pd<span style="color:#f92672">.</span>DataFrame:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> pd<span style="color:#f92672">.</span>read_csv(
+</span></span><span style="display:flex;"><span>        BytesIO(raw),
+</span></span><span style="display:flex;"><span>        sep<span style="color:#f92672">=</span><span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;\s+&#34;</span>,
+</span></span><span style="display:flex;"><span>        header<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>,
+</span></span><span style="display:flex;"><span>        skiprows<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>,
+</span></span><span style="display:flex;"><span>        encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;latin1&#34;</span>,
+</span></span><span style="display:flex;"><span>        names<span style="color:#f92672">=</span>COLUMNS<span style="color:#f92672">.</span>keys(),
+</span></span><span style="display:flex;"><span>        index_col<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>,
+</span></span><span style="display:flex;"><span>        dtype<span style="color:#f92672">=</span>COLUMNS,
+</span></span><span style="display:flex;"><span>        na_values<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;---&#34;</span>, <span style="color:#e6db74">&#34;------&#34;</span>],
+</span></span><span style="display:flex;"><span>    )
+</span></span></code></pre></div><h2 id="results">Results</h2>
+<p>This ETL has been working since Spring 2022 on a daily basis and has been surprisingly robust.</p>
+<p>On the odd day that the weather station is offline at the time of extraction, it is possible to manually re-run the failed pipeline in order to catch up for missing data. If this is the case, Github will send me a notification email and I will re-run the action at my convenience. There is an 8-day limit to recover missing data, as it will stop being available on the website.</p>
+<p>On a couple of rare occasions there has been slight data corruption related to mismatches between the raw <code>txt</code> file and the data parser. These have been treated as bugs and fixed after adding the relevant unit tests. From looking at the Github <a href="https://github.com/ber2/meteobeguda-etl/commits/main/?author=ber2">commit history</a>, one could say that migrating python package managers, from <a href="https://python-poetry.org/">poetry</a> to <a href="https://rye.astral.sh/">rye</a> to <a href="https://docs.astral.sh/uv/">uv</a>), has been more of a headache than fixing bugs.</p>
+<p>The nature of this solution obeys the conditions of going <em>very cheap</em> into coding a hobby ETL for a very small amount of data. I would carry very little of what has been implemented in this project to a professional production environment, with perhaps the exception of choosing a very simple initial architecture and then introducing complexity by small incremental steps as dictated by need.</p>
+<p>A few obvious <em>more serious</em> choices:</p>
+<ul>
+<li>
+<p>Replacing the use of <strong>requests</strong> by <a href="https://docs.aiohttp.org/en/stable/">aiohttp</a> in order to allow asynchronous parallelism. This would be a good idea if we were extracting data from many different stations simultaneously.</p>
+</li>
+<li>
+<p>Replacing the use of <strong>pandas</strong> by more performant data processing options such as <a href="https://pola.rs/">polars</a> or even <a href="https://spark.apache.org/">Apache Spark</a>. The latter is a good idea if the volume of data to be processed advises moving to a distributed cluster.</p>
+</li>
+<li>
+<p>Replacing the use of an on-disk <strong>sqlite</strong> database by a SQL database, such as <a href="https://www.postgresql.org/">PostgreSQL</a>, with dedicated hosting. This would be useful in a variety of situations such as for example having multiple users querying clean data.</p>
+</li>
+<li>
+<p>Replacing the use of Github Actions as a scheduler by a choice of a proper task scheduler such as <a href="https://airflow.apache.org/">Apache Airflow</a>. This allows for reproducibility of batch runs and automatic re-runs in case of failure, and the introduction of subtle logic associated to running tasks as a DAG.</p>
+</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>Nowadays, after it rains, I have a choice:</p>
+<ul>
+<li>
+<p>Going to the pluviometer.</p>
+</li>
+<li>
+<p>Throwing a SQL query against a SQLite database.</p>
+</li>
+</ul>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

@@ -6,12 +6,19 @@
     <description>Recent content on Alberto Cámara</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 14 Jun 2025 08:00:06 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 08 Sep 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://ber2.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building a very small ETL for local weather data</title>
+      <link>https://ber2.github.io/posts/local_weather_etl/</link>
+      <pubDate>Mon, 08 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://ber2.github.io/posts/local_weather_etl/</guid>
+      <description>&lt;h2 id=&#34;having-fun-with-weather-data&#34;&gt;Having fun with weather data&lt;/h2&gt;&#xA;&lt;p&gt;Weather data is one of the most interesting data sources that are available to a Data Scientist.&lt;/p&gt;&#xA;&lt;p&gt;One of the first ETLs that I ever coded when starting to work as a Data Scientist was a daily extraction of current and predicted weather data. This data would later be processed into features for a model predicting brick-and-mortar shop sales.&lt;/p&gt;&#xA;&lt;p&gt;Weather data is easily available. If you are based in Catalonia, for example, &lt;a href=&#34;https://meteo.cat/&#34;&gt;meteo.cat&lt;/a&gt; is the Catalan government agency and has a very good &lt;a href=&#34;https://apidocs.meteocat.gencat.cat/&#34;&gt;REST API&lt;/a&gt; plus a very nice network of &lt;a href=&#34;https://meteo.cat/wpweb/observacions/&#34;&gt;weather stations&lt;/a&gt;. The equivalent for the Spanish government is &lt;a href=&#34;https://www.aemet.es/ca/portada&#34;&gt;AEMET&lt;/a&gt;, also with an open &lt;a href=&#34;https://opendata.aemet.es/centrodedescargas/inicio&#34;&gt;REST API&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>A Github Actions setup for Python projects in 2025</title>
       <link>https://ber2.github.io/posts/2025_github_actions_python/</link>
-      <pubDate>Sat, 14 Jun 2025 08:00:06 +0200</pubDate>
+      <pubDate>Sat, 14 Jun 2025 00:00:00 +0000</pubDate>
       <guid>https://ber2.github.io/posts/2025_github_actions_python/</guid>
       <description>&lt;h2 id=&#34;tldr&#34;&gt;TL;DR&lt;/h2&gt;&#xA;&lt;p&gt;In this post I discuss my current choice of tools for setting up a Python project and running continuous integration via &lt;a href=&#34;https://github.com/features/actions&#34;&gt;Github Actions&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;In line with recent fashion, my choices revolve significantly around some of the recently introduced tools by &lt;a href=&#34;https://astral.sh&#34;&gt;Astral&lt;/a&gt;. Their common &lt;em&gt;leitmotiv&lt;/em&gt; is that, although designed for the Python ecosystem, the tools themselves are written in &lt;a href=&#34;https://www.rust-lang.org/&#34;&gt;Rust&lt;/a&gt;. This, along with some very nice design decisions (see &lt;a href=&#34;https://www.youtube.com/watch?v=gSKTfG1GXYQ&#34;&gt;this talk&lt;/a&gt; about &lt;code&gt;uv&lt;/code&gt;, for example), makes them very reliable and fast.&lt;/p&gt;</description>
     </item>
