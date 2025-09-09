@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Streamlit on Alberto Cámara</title>
+    <link>http://localhost:1313/tags/streamlit/</link>
+    <description>Recent content in Streamlit on Alberto Cámara</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 25 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/streamlit/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Streamlit Data App for local weather</title>
+      <link>http://localhost:1313/posts/weather_app/</link>
+      <pubDate>Wed, 25 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/weather_app/</guid>
+      <description>&lt;h3 id=&#34;a-data-app&#34;&gt;A Data App&lt;/h3&gt;&#xA;&lt;p&gt;Around the same time I discovered the first Python frameworks for developing Data Apps, and I fell in love with the idea of using them to build Data Narratives and demos. I decided that it would be a good idea to build my own local weather app using online data from meteobeguda, and the obvious choices were &lt;a href=&#34;https://dash.plotly.com/&#34;&gt;Plotly Dash&lt;/a&gt; and &lt;a href=&#34;https://streamlit.io/&#34;&gt;Streamlit&lt;/a&gt;. Many more options are available nowadays, but I went for Streamlit for a very powerful reason that still holds true today: &lt;strong&gt;free and easy deployment for Github-hosted, open source apps&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
