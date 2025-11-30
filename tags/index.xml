@@ -6,8 +6,78 @@
     <description>Recent content in Tags on Alberto Cámara</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 08 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 30 Nov 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://ber2.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI Agents</title>
+      <link>https://ber2.github.io/tags/ai-agents/</link>
+      <pubDate>Sun, 30 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://ber2.github.io/tags/ai-agents/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Gemini</title>
+      <link>https://ber2.github.io/tags/gemini/</link>
+      <pubDate>Sun, 30 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://ber2.github.io/tags/gemini/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ollama</title>
+      <link>https://ber2.github.io/tags/ollama/</link>
+      <pubDate>Sun, 30 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://ber2.github.io/tags/ollama/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Pydantic</title>
+      <link>https://ber2.github.io/tags/pydantic/</link>
+      <pubDate>Sun, 30 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://ber2.github.io/tags/pydantic/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Pydantic AI</title>
+      <link>https://ber2.github.io/tags/pydantic-ai/</link>
+      <pubDate>Sun, 30 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://ber2.github.io/tags/pydantic-ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Pytest</title>
+      <link>https://ber2.github.io/tags/pytest/</link>
+      <pubDate>Sun, 30 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://ber2.github.io/tags/pytest/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>https://ber2.github.io/tags/python/</link>
+      <pubDate>Sun, 30 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://ber2.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tdd</title>
+      <link>https://ber2.github.io/tags/tdd/</link>
+      <pubDate>Sun, 30 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://ber2.github.io/tags/tdd/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Uv</title>
+      <link>https://ber2.github.io/tags/uv/</link>
+      <pubDate>Sun, 30 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://ber2.github.io/tags/uv/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Workshop</title>
+      <link>https://ber2.github.io/tags/workshop/</link>
+      <pubDate>Sun, 30 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://ber2.github.io/tags/workshop/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Csv</title>
       <link>https://ber2.github.io/tags/csv/</link>
@@ -34,13 +104,6 @@
       <link>https://ber2.github.io/tags/pandas/</link>
       <pubDate>Mon, 08 Sep 2025 00:00:00 +0000</pubDate>
       <guid>https://ber2.github.io/tags/pandas/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Python</title>
-      <link>https://ber2.github.io/tags/python/</link>
-      <pubDate>Mon, 08 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>https://ber2.github.io/tags/python/</guid>
       <description></description>
     </item>
     <item>
@@ -72,13 +135,6 @@
       <description></description>
     </item>
     <item>
-      <title>Pytest</title>
-      <link>https://ber2.github.io/tags/pytest/</link>
-      <pubDate>Sat, 14 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://ber2.github.io/tags/pytest/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Ruff</title>
       <link>https://ber2.github.io/tags/ruff/</link>
       <pubDate>Sat, 14 Jun 2025 00:00:00 +0000</pubDate>
@@ -90,13 +146,6 @@
       <link>https://ber2.github.io/tags/testing/</link>
       <pubDate>Sat, 14 Jun 2025 00:00:00 +0000</pubDate>
       <guid>https://ber2.github.io/tags/testing/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Uv</title>
-      <link>https://ber2.github.io/tags/uv/</link>
-      <pubDate>Sat, 14 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://ber2.github.io/tags/uv/</guid>
       <description></description>
     </item>
     <item>
