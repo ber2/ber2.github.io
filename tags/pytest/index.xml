@@ -6,8 +6,15 @@
     <description>Recent content in Pytest on Alberto Cámara</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 14 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 30 Nov 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://ber2.github.io/tags/pytest/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2025 PyDay Bcn workshop on building agents with Pydantic AI</title>
+      <link>https://ber2.github.io/posts/2025_pyday_workshop/</link>
+      <pubDate>Sun, 30 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://ber2.github.io/posts/2025_pyday_workshop/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;workshop.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;a-nice-way-to-spend-a-saturday&#34;&gt;A nice way to spend a Saturday&lt;/h2&gt;&#xA;&lt;p&gt;The &lt;a href=&#34;https://pybcn.org/events/pyday_bcn/pyday_bcn_2025/&#34;&gt;PyDay BCN 2025&lt;/a&gt; conference took place yesterday, November 29th. As usual, it was a very nice event filled with workshops centered around Python, and a great opportunity to meet old and new friends from the Python community.&lt;/p&gt;&#xA;&lt;p&gt;I would like to take the chance to express my gratitude to the organisers for all the hard work they did putting together this event, which turned out excellent.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>A Github Actions setup for Python projects in 2025</title>
       <link>https://ber2.github.io/posts/2025_github_actions_python/</link>
